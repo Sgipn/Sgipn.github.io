@@ -60,15 +60,22 @@
     <div class="card shadow-sm p-4 mb-4">
       <h5 class="mb-0">Risk & Financial Advisory Consultant</h5>
       <p class="text-muted mb-3"><em>Deloitte, San Francisco | Promoted from Business Analyst, May 2024 &middot; Aug 2022 &ndash; Apr 2025</em></p>
-      <p class="fst-italic">DoD Financial Improvement and Audit Readiness (FIAR) engagement, Apr 2023 &ndash; Apr 2025</p>
+      <p class="fst-italic">Supported a DoD Financial Improvement and Audit Readiness (FIAR) engagement from Apr 2023 to Apr 2025, building the data pipelines and calculation logic behind a $12B Air Force military equipment portfolio.</p>
       <ul>
-        <li>Built and maintained SQL-based ingestion pipelines (Databricks, PySpark, Parquet) sourcing GAFS-BQ transaction data into an S3 data lake, plus an API-based tool automating input-template intake for 10+ Air Force programs.</li>
-        <li>Translated complex military-equipment valuation requirements into the calculation logic behind the team's quarterly Construction-in-Progress (CIP) deliverable.</li>
-        <li>Wrote SQL-based data-quality checks reconciling the team's automated deliverable against a legacy manual process; traced a significant unaccounted variance and co-authored findings recommending priority programs for review.</li>
+        <li>Built and maintained canonical SQL-based ingestion pipelines (Databricks, PySpark, Parquet) sourcing GAFS-BQ transaction data into an S3 data lake, plus an API-based tool automating input-template intake for 10+ Air Force programs (e.g., F-16); re-engineered the pipeline from ad hoc notebooks into modular, version-controlled components.</li>
+
+        <li>Translated complex military-equipment valuation requirements (depreciation schedules by equipment type, lot-level percentage-complete tracking) into the calculation logic behind the team's quarterly Construction-in-Progress (CIP) deliverable, applying Military Equipment Valuation (MEV) methodology.</li>
+
+        <li>Wrote data-integrity checks reconciling the team's automated deliverable against a legacy manual (Excel-based) process at the transaction level; authored the reconciliation logic, traced a significant unaccounted variance, and co-authored findings recommending priority programs for further review.</li>
+
+        <li>Owned technical documentation (SOPs, schemas, data dictionaries) to standardize pipeline logic across the team, using Deloitte's internal ChatGPT-based LLM tool to accelerate drafting and debugging; mentored junior data scientists as the team scaled from 4 to 8 and the program expanded to Space Force.
+        </li>
       </ul>
-      <p class="fst-italic mt-3">U.S. Army data-governance engagement (Deloitte SEMOSS platform), Sep 2022 &ndash; Apr 2023</p>
+      <p class="fst-italic mt-3">From Sep 2022 to Apr 2023, supported a data-governance engagement for the U.S. Army on Deloitte's SEMOSS platform, building dashboards and analysis to help identify and sunset redundant Army policies.</p>
       <ul class="mb-0">
-        <li>Built graph-based clustering logic organizing thousands of Army policies into a multi-level taxonomy; visualized findings through interactive dashboards presented quarterly, giving Army leadership line of sight into policy redundancy.</li>
+        <li>Built graph-based clustering logic organizing thousands of Army policies into a multi-level taxonomy (standards, clusters, systems) to identify redundant, sunset-able policies; visualized findings through interactive SEMOSS dashboards presented quarterly, giving Army leadership line of sight into policy redundancy.</li>
+        <li>Built dashboards using Tableau, Python, SQL, and HTML, including an enterprise health grid tracking status and redundancy counts across the policy taxonomy's systems, hosted on AWS infrastructure.
+        </li>
       </ul>
     </div>
   </div>
