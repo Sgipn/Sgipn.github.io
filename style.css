@@ -6,6 +6,7 @@ body {
   background-color: rgb(255, 251, 248);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: #222222;
+  font-size: 19px;
 }
 
 .navbar-card {
@@ -24,21 +25,21 @@ body {
 }
 
 .avatar-placeholder {
-  width: 96px;
-  height: 96px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
   background-color: #222222;
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 70px;
   font-weight: 600;
 }
 
 .avatar-img {
-  width: 96px;
-  height: 96px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
