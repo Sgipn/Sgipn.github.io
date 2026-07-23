@@ -10,140 +10,171 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar-card container shadow-sm p-3 my-4">
-  <h1 class="text-center mb-2">Kevin Xu</h1>
-  <ul class="nav justify-content-center">
-    <li class="nav-item mx-2"><a class="nav-link" href="#about">About</a></li>
-    <li class="nav-item mx-2"><a class="nav-link" href="#experience">Experience</a></li>
-    <li class="nav-item mx-2"><a class="nav-link" href="#projects">Projects</a></li>
-    <li class="nav-item mx-2"><a class="nav-link" href="#skills">Skills</a></li>
-    <li class="nav-item mx-2"><a class="nav-link" href="KevinXu_Resume_7_23.pdf">Resume</a></li>
-  </ul>
+  <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+    <div>
+      <h1 class="navbar-brand mb-1">Kevin Xu</h1>
+      <p class="navbar-tagline mb-0">Data Scientist · Consultant · Systems Designer</p>
+    </div>
+    <ul class="nav justify-content-center">
+      <li class="nav-item mx-2"><a class="nav-link" href="#about">About</a></li>
+      <li class="nav-item mx-2"><a class="nav-link" href="#experience">Experience</a></li>
+      <li class="nav-item mx-2"><a class="nav-link" href="#projects">Projects</a></li>
+      <li class="nav-item mx-2"><a class="nav-link" href="#skills">Skills</a></li>
+      <li class="nav-item mx-2"><a class="nav-link" href="KevinXu_Resume_7_23.pdf">Resume</a></li>
+    </ul>
+  </div>
 </nav>
 
-<div class="container">
+<main class="container">
 
-  <!-- WELCOME -->
-  <div class="welcome-container text-center my-5">
-    <img src="KX.jpg" alt="Kevin Xu" class="avatar-img mx-auto mb-3">
-    <div class="card shadow-sm mx-auto p-4" style="max-width: 700px;">
-      <h2>Welcome <span>👋</span></h2>
-      <p class="mb-0">Hi, I'm Kevin Xu, a passionate Data Scientist and Consultant focused on building intelligent, data-driven solutions. Feel free to explore my work and get in touch!</p>
-    </div>
-    <div class="welcome-links mt-4">
-      <a href="https://www.github.com/Sgipn" target="_blank" rel="noopener noreferrer" class="mx-2" title="GitHub"><i class="fa-brands fa-github fa-lg"></i></a>
-      <a href="https://www.linkedin.com/in/kevin42xu" target="_blank" rel="noopener noreferrer" class="mx-2" title="LinkedIn"><i class="fa-brands fa-linkedin fa-lg"></i></a>
-      <a href="mailto:kxu9787@gmail.com" class="mx-2" title="Email"><i class="fa-solid fa-envelope fa-lg"></i></a>
-    </div>
-  </div>
-
-  <!-- ABOUT -->
-  <div id="about" class="section-block container my-5 p-4">
-    <h2 class="text-center mb-4">About Me</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <p>I'm a recent graduate of UC Berkeley, where I completed an M.A. in Statistics. I got my B.S. in Statistics from UC Davis, graduating on the Dean's List.
-
-        After getting my bachelors, I spent about three years at Deloitte on data teams building data pipelines for a Department of Defense financial-improvement/audit-readiness engagement and earlier supporting a U.S. Army data-governance project.
-        
-        I'm especially interested in quantitative risk and building efficient, reliable data systems.Beyond my professional pursuits, I enjoy backpacking, chess, and listening to classic rock 🎸
+  <section class="hero-section text-center mb-5">
+    <div class="hero-glow"></div>
+    <img src="KX.jpg" alt="Kevin Xu" class="avatar-img mx-auto mb-4">
+    <div class="hero-card mx-auto p-5">
+      <p class="eyebrow">Hello, I’m</p>
+      <h2 class="hero-title">Kevin Xu</h2>
+      <p class="hero-copy mx-auto">I shape data systems that behave with precision and present insight with clarity. My work makes risk-aware decisions easier to see and easier to act on.</p>
+      <div class="hero-actions mt-4">
+        <a href="#about" class="btn btn-outline-light btn-lg mx-2">About</a>
+        <a href="KevinXu_Resume_7_23.pdf" class="btn btn-primary btn-lg mx-2">Download Resume</a>
+      </div>
+      <div class="welcome-links mt-5 justify-content-center">
+        <a href="https://www.github.com/Sgipn" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github fa-lg"></i></a>
+        <a href="https://www.linkedin.com/in/kevin42xu" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin fa-lg"></i></a>
+        <a href="mailto:kxu9787@gmail.com" title="Email"><i class="fa-solid fa-envelope fa-lg"></i></a>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- EXPERIENCE -->
-  <div id="experience" class="section-block container my-5 p-4">
-    <h2 class="text-center mb-4">Experience</h2>
-    <div class="card shadow-sm p-4 mb-4">
-      <h5 class="mb-0">Risk & Financial Advisory Consultant</h5>
-      <p class="text-muted mb-3"><em>Deloitte, San Francisco | Promoted from Business Analyst, May 2024 &middot; Aug 2022 &ndash; Apr 2025</em></p>
-      <p class="fst-italic">Supported a DoD Financial Improvement and Audit Readiness (FIAR) engagement from Apr 2023 to Apr 2025, building the data pipelines and calculation logic behind a $12B Air Force military equipment portfolio.</p>
+  <section id="about" class="section-block section-card my-5 p-5">
+    <div class="section-header text-center mb-4">
+      <span class="section-eyebrow">About</span>
+      <h2>About Me</h2>
+    </div>
+    <div class="section-copy mx-auto" style="max-width: 800px;">
+      <p>I'm a UC Berkeley graduate in Statistics with experience turning complex federal and financial datasets into production-ready analytics. At Deloitte, I built robust pipelines, valuation logic, and automation that made high-stakes government reporting clearer and more reliable.</p>
+      <p>I focus on quantitative risk, modeling transparency, and operational efficiency. Outside work, I enjoy backpacking, chess, and classic rock 🎸 — I like systems that feel elegant and effortless.</p>
+    </div>
+  </section>
+
+  <section id="experience" class="section-block section-card my-5 p-5">
+    <div class="section-header text-center mb-4">
+      <span class="section-eyebrow">Work</span>
+      <h2>Experience</h2>
+    </div>
+    <article class="experience-card mb-4">
+      <div class="experience-top d-flex flex-column flex-md-row align-items-start justify-content-between gap-3 mb-3">
+        <div>
+          <h5>Risk & Financial Advisory Consultant</h5>
+          <p class="experience-subtitle mb-0"><em>Deloitte, San Francisco | Aug 2022 – Apr 2025</em></p>
+        </div>
+        <span class="experience-badge">Promoted from Business Analyst, May 2024</span>
+      </div>
+      <p class="experience-intro fst-italic">Supported a DoD FIAR engagement, building the data pipelines and calculation logic behind a $12B Air Force equipment portfolio.</p>
       <ul>
-        <li>Built and maintained canonical SQL-based ingestion pipelines (Databricks, PySpark, Parquet) sourcing GAFS-BQ transaction data into an S3 data lake, plus an API-based tool automating input-template intake for 10+ Air Force programs (e.g., F-16); re-engineered the pipeline from ad hoc notebooks into modular, version-controlled components.</li>
-
-        <li>Translated complex military-equipment valuation requirements (depreciation schedules by equipment type, lot-level percentage-complete tracking) into the calculation logic behind the team's quarterly Construction-in-Progress (CIP) deliverable, applying Military Equipment Valuation (MEV) methodology.</li>
-
-        <li>Wrote data-integrity checks reconciling the team's automated deliverable against a legacy manual (Excel-based) process at the transaction level; authored the reconciliation logic, traced a significant unaccounted variance, and co-authored findings recommending priority programs for further review.</li>
-
-        <li>Owned technical documentation (SOPs, schemas, data dictionaries) to standardize pipeline logic across the team, using Deloitte's internal ChatGPT-based LLM tool to accelerate drafting and debugging; mentored junior data scientists as the team scaled from 4 to 8 and the program expanded to Space Force.
-        </li>
+        <li>Built SQL/PySpark ingestion pipelines that moved GAFS-BQ transaction data into an S3 data lake and automated intake for 10+ Air Force programs.</li>
+        <li>Translated valuation requirements into modular calculation logic for quarterly Construction-in-Progress reporting.</li>
+        <li>Created transaction-level data-integrity checks and reconciliations against legacy Excel processes, uncovering a significant variance and driving recommendations.</li>
+        <li>Authored SOPs, schemas, and dashboards while mentoring junior data scientists and helping the team scale.</li>
       </ul>
-      <p class="fst-italic mt-3">From Sep 2022 to Apr 2023, supported a data-governance engagement for the U.S. Army on Deloitte's SEMOSS platform, building dashboards and analysis to help identify and sunset redundant Army policies.</p>
-      <ul class="mb-0">
-        <li>Built graph-based clustering logic organizing thousands of Army policies into a multi-level taxonomy (standards, clusters, systems) to identify redundant, sunset-able policies; visualized findings through interactive SEMOSS dashboards presented quarterly, giving Army leadership line of sight into policy redundancy.</li>
-        <li>Built dashboards using Tableau, Python, SQL, and HTML, including an enterprise health grid tracking status and redundancy counts across the policy taxonomy's systems, hosted on AWS infrastructure.
-        </li>
+      <p class="fst-italic mt-4">Previously, I supported a U.S. Army data-governance engagement, organizing policy clusters and building dashboards to identify redundant policy structures.</p>
+      <ul>
+        <li>Built graph-based clustering logic to organize thousands of Army policies into a multi-level taxonomy for redundancy review.</li>
+        <li>Delivered interactive dashboards on SEMOSS, giving leadership clear visibility into policy health and sunset candidates.</li>
       </ul>
+    </article>
+  </section>
+
+  <section id="projects" class="section-block section-card my-5 p-5">
+    <div class="section-header text-center mb-4">
+      <span class="section-eyebrow">Projects</span>
+      <h2>Selected Work</h2>
     </div>
-  </div>
-
-  <!-- PROJECTS -->
-  <div id="projects" class="section-block container my-5 p-4">
-    <h2 class="text-center mb-4">Projects</h2>
-
-    <div class="row mb-4 align-items-center project-row">
-      <div class="col-md-12">
-        <div class="card shadow-sm p-4">
+    <div class="row gx-4 gy-4">
+      <div class="col-lg-6">
+        <div class="project-card card shadow-sm p-4">
+          <span class="project-label">Modeling</span>
           <h5 class="project-title">Feature Cost vs. Signal in Credit Risk Prediction</h5>
-          <p class="text-muted mb-2"><em>Jan &ndash; May 2026</em></p>
-          <p>Built and stress-tested 11 model specifications and regularization paths (LASSO/Ridge) across 30K accounts to run scenario and sensitivity analysis on which cost drivers justified their data-acquisition cost. A 2-variable model matched full-model accuracy, and regime-dependent testing showed cost drivers shift by borrower lifecycle stage. These findings informed a trade-off recommendation to cut scope without sacrificing signal.</p>
+          <p class="text-muted mb-2"><em>Jan – May 2026</em></p>
+          <p>Built 11 model specifications to evaluate which data inputs justified acquisition cost for 30K accounts, showing a 2-variable model preserved accuracy while reducing operational overhead.</p>
           <p class="mb-2"><strong>Languages:</strong> Python, R</p>
-          <a href="https://github.com/Sgipn/Feature_Cost_vs_Signal_in_Credit_Risk_Prediction" class="btn btn-outline-dark btn-sm">View on GitHub</a>
+          <a href="https://github.com/Sgipn/Feature_Cost_vs_Signal_in_Credit_Risk_Prediction" class="btn btn-outline-light btn-sm">GitHub</a>
         </div>
       </div>
-    </div>
-
-    <div class="row mb-4 align-items-center project-row">
-      <div class="col-md-12">
-        <div class="card shadow-sm p-4">
+      <div class="col-lg-6">
+        <div class="project-card card shadow-sm p-4">
+          <span class="project-label">Forecasting</span>
           <h5 class="project-title">Forecasting: CA Industrial Emissions</h5>
-          <p class="text-muted mb-2"><em>Sep &ndash; Dec 2025</em></p>
-          <p>Forecasted a trend-dominated cost series using SARIMA, Lasso, and Gradient Boosting. SARIMA had the strongest residual diagnostics (Ljung-Box p&gt;0.75), while a simplified 4-feature alternative preserved comparable accuracy: built specifically for non-technical stakeholders who needed to trust the forecast, not just see the number.</p>
+          <p class="text-muted mb-2"><em>Sep – Dec 2025</em></p>
+          <p>Forecasted emissions costs with SARIMA, Lasso, and GBM, then distilled a 4-feature stakeholder-ready model that matched production accuracy with better interpretability.</p>
           <p class="mb-2"><strong>Languages:</strong> Python, R</p>
-          <a href="https://github.com/Sgipn/CA_Industrial_Emissions_Forecasting" class="btn btn-outline-dark btn-sm">View on GitHub</a>
+          <a href="https://github.com/Sgipn/CA_Industrial_Emissions_Forecasting" class="btn btn-outline-light btn-sm">GitHub</a>
         </div>
       </div>
-    </div>
-
-    <div class="row mb-4 align-items-center project-row">
-      <div class="col-md-12">
-        <div class="card shadow-sm p-4 in-progress-card">
-          <span class="badge bg-secondary mb-2" style="width: fit-content;">In Progress</span>
+      <div class="col-lg-12">
+        <div class="project-card card shadow-sm p-4 in-progress-card">
+          <div class="d-flex align-items-center justify-content-between flex-column flex-md-row gap-3 mb-3">
+            <span class="badge bg-secondary">In Progress</span>
+            <span class="project-label">Streaming</span>
+          </div>
           <h5 class="project-title">Streaming Pipeline for Emissions Forecasting</h5>
-          <p>Extending the CA Industrial Emissions project with a real-time ingestion layer: streaming data through Apache Kafka, orchestrated with Apache Airflow, feeding the existing SARIMA forecasting model. Built to close the gap between batch-pipeline experience and production streaming data engineering.</p>
+          <p>Extending the CA Industrial Emissions project with Apache Kafka and Airflow to bring forecast inputs into a live pipeline built for fast operational decisions.</p>
           <p class="mb-0"><strong>Tools:</strong> Apache Kafka, Apache Airflow, Python</p>
         </div>
       </div>
     </div>
+  </section>
 
-  </div>
-
-  <!-- SKILLS -->
-  <div id="skills" class="section-block container my-5 p-4">
-    <h2 class="text-center mb-4">Skills</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-10">
-        <div class="card shadow-sm p-4 mb-3">
-          <h5 class="card-title">Languages</h5>
-          <p class="mb-0">SQL (PostgreSQL, T-SQL), Python (pandas, NumPy, scikit-learn, XGBoost, LightGBM), PySpark, R, Bash</p>
+  <section id="skills" class="section-block section-card my-5 p-5">
+    <div class="section-header text-center mb-4">
+      <span class="section-eyebrow">Skills</span>
+      <h2>Capabilities</h2>
+    </div>
+    <div class="skill-grid row gx-4 gy-4">
+      <div class="col-md-4">
+        <div class="skill-card p-4 shadow-sm">
+          <h5>Languages</h5>
+          <div class="skill-list mt-3">
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">SQL</span>
+            <span class="skill-chip">R</span>
+            <span class="skill-chip">PySpark</span>
+            <span class="skill-chip">Bash</span>
+          </div>
         </div>
-        <div class="card shadow-sm p-4 mb-3">
-          <h5 class="card-title">Data Engineering & Tools</h5>
-          <p class="mb-0">ETL/ELT Pipelines, Distributed Computing (Spark), S3 Data Lake, Databricks, MLflow, Tableau, Power BI, Matplotlib, Seaborn, AWS (S3, Glue, Athena, SageMaker), Git</p>
+      </div>
+      <div class="col-md-4">
+        <div class="skill-card p-4 shadow-sm">
+          <h5>Data Engineering</h5>
+          <div class="skill-list mt-3">
+            <span class="skill-chip">Databricks</span>
+            <span class="skill-chip">S3</span>
+            <span class="skill-chip">AWS</span>
+            <span class="skill-chip">MLflow</span>
+            <span class="skill-chip">Tableau</span>
+          </div>
         </div>
-        <div class="card shadow-sm p-4">
-          <h5 class="card-title">Financial & Analytical</h5>
-          <p class="mb-0">Financial Calculations, Variance Analysis, Scenario Analysis, Forecasting (SARIMA), Regression (OLS/WLS/GLS), Hypothesis Testing, Probability, Causal Inference</p>
+      </div>
+      <div class="col-md-4">
+        <div class="skill-card p-4 shadow-sm">
+          <h5>Analytics</h5>
+          <div class="skill-list mt-3">
+            <span class="skill-chip">Forecasting</span>
+            <span class="skill-chip">Regression</span>
+            <span class="skill-chip">Scenario Analysis</span>
+            <span class="skill-chip">Variance Analysis</span>
+            <span class="skill-chip">Causal Inference</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-</div>
+</main>
 
 <footer class="text-center text-muted py-4">
-  <p class="mb-0">Kevin Xu &middot; kxu9787@gmail.com</p>
+  <p class="mb-0">Kevin Xu · kxu9787@gmail.com</p>
 </footer>
 
 </body>
