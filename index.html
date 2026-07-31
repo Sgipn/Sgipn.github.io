@@ -34,7 +34,7 @@
     <div class="hero-card mx-auto p-5">
       <p class="eyebrow">Hello, I’m</p>
       <h2 class="hero-title">Kevin Xu</h2>
-      <p class="hero-copy mx-auto">Data Engineer building production PySpark and SQL ETL/ELT pipelines across AWS Glue, Databricks, and S3 data lakes. I turn large-scale raw data into reliable infrastructure for analytics and downstream modeling.</p>
+      <p class="hero-copy mx-auto">Hi, I'm Brian Fernando, a passionate Data Scientist and Machine Learning Engineer focused on crafting intelligent, data-driven solutions. Feel free to explore my work and get in touch!</p>
       <div class="hero-actions mt-4">
         <a href="#about" class="btn btn-outline-light btn-lg mx-2">About</a>
         <a href="KevinXu_Resume_DataEngineer_7_30.docx" class="btn btn-primary btn-lg mx-2">Download Resume</a>
@@ -110,6 +110,7 @@
           <p class="text-muted mb-2"><em>Research project</em></p>
           <p>Developed multi-modal feature extraction from satellite imagery using convolutional autoencoders and tree-based ensembles for cloud cover and terrain classification.</p>
           <div class="d-flex flex-wrap gap-2 align-items-center mt-3">
+            <a href="https://github.com/Sgipn/Geospatial_Satellite_Imagery_Cloud_Detection" class="btn btn-outline-light btn-sm" target="_blank" rel="noopener noreferrer">GitHub</a>
             <button class="project-toggle btn btn-secondary btn-sm" type="button" aria-expanded="false">View details</button>
           </div>
           <div class="project-details mt-3" hidden>
@@ -128,6 +129,7 @@
           <p class="text-muted mb-2"><em>Modeling research</em></p>
           <p>Built cost-sensitive classification models and structural diagnostics to evaluate risk with asymmetric loss and operational pipeline cost in mind.</p>
           <div class="d-flex flex-wrap gap-2 align-items-center mt-3">
+            <a href="https://github.com/Sgipn/Asymmetric_Credit_Risk_Infrastructure_Modeling" class="btn btn-outline-light btn-sm" target="_blank" rel="noopener noreferrer">GitHub</a>
             <button class="project-toggle btn btn-secondary btn-sm" type="button" aria-expanded="false">View details</button>
           </div>
           <div class="project-details mt-3" hidden>
@@ -146,12 +148,38 @@
           </div>
           <h5 class="project-title">Parameter-Efficient Fine-tuning (LoRA) for Sequence Data</h5>
           <p>Applied PEFT/LoRA to transformer models for classification tasks and validated interpretability and robustness through feature attribution and noise experiments.</p>
-          <button class="project-toggle btn btn-secondary btn-sm mt-3" type="button" aria-expanded="false">View details</button>
+          <div class="d-flex flex-wrap gap-2 align-items-center mt-3">
+            <a href="https://github.com/Sgipn/Parameter_Efficient_Fine_Tuning_LoRA" class="btn btn-outline-light btn-sm" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <button class="project-toggle btn btn-secondary btn-sm" type="button" aria-expanded="false">View details</button>
+          </div>
           <div class="project-details mt-3" hidden>
             <ul>
               <li>Fine-tuned BERT-based models with PEFT/LoRA and analyzed feature stability using SHAP and LIME.</li>
               <li>Evaluated temporal models with ADF, Ljung-Box, and Breusch-Pagan testing.</li>
               <li>Corrected open-book vs closed-book evaluation leaks for true rolling forecast benchmarks.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="project-card card shadow-sm p-4">
+          <div class="d-flex align-items-center justify-content-between flex-column flex-md-row gap-3 mb-3">
+            <span class="badge bg-secondary">Streaming</span>
+            <span class="project-label">Kafka / Airflow</span>
+          </div>
+          <h5 class="project-title">Streaming Pipeline for Emissions Forecasting</h5>
+          <p>Extended the CA Industrial Emissions work by building a streaming data ingestion and orchestration pipeline with Kafka and Airflow.</p>
+          <p class="project-status mb-2"><strong>Status:</strong> In Progress</p>
+          <p class="mb-0"><strong>Tools:</strong> Apache Kafka, Apache Airflow, Python</p>
+          <div class="d-flex flex-wrap gap-2 align-items-center mt-3">
+            <a href="https://github.com/Sgipn/Streaming_Pipeline_for_Emissions_Forecasting" class="btn btn-outline-light btn-sm" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <button class="project-toggle btn btn-secondary btn-sm mt-3" type="button" aria-expanded="false">View details</button>
+          </div>
+          <div class="project-details mt-3" hidden>
+            <ul>
+              <li>Built an event-driven layer to ingest sensor and regulatory data into a daily scoring pipeline.</li>
+              <li>Designed automatic health checks and replay logic for resilient production delivery.</li>
+              <li>Enabled fast operational decisions with a live stream pipeline and observability hooks.</li>
             </ul>
           </div>
         </div>
