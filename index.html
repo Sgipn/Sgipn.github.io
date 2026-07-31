@@ -14,7 +14,7 @@
   <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
     <div>
       <h1 class="navbar-brand mb-1">Kevin Xu</h1>
-      <p class="navbar-tagline mb-0">Data Scientist · Consultant · Backpacker</p>
+      <p class="navbar-tagline mb-0">Data Engineer · Cloud ETL · Statistical Modeling</p>
     </div>
     <ul class="nav justify-content-center">
       <li class="nav-item mx-2"><a class="nav-link" href="#about">About</a></li>
@@ -34,12 +34,12 @@
     <div class="hero-card mx-auto p-5">
       <p class="eyebrow">Hello, I’m</p>
       <h2 class="hero-title">Kevin Xu</h2>
-      <p class="hero-copy mx-auto">I build thoughtful data systems that help teams make smarter decisions, and I care about the people behind the numbers.</p>
+      <p class="hero-copy mx-auto">Data Engineer building production PySpark and SQL ETL/ELT pipelines across AWS Glue, Databricks, and S3 data lakes. I turn large-scale raw data into reliable infrastructure for analytics and downstream modeling.</p>
       <div class="hero-actions mt-4">
         <a href="#about" class="btn btn-outline-light btn-lg mx-2">About</a>
         <a href="KevinXu_Resume_DataEngineer_7_30.docx" class="btn btn-primary btn-lg mx-2">Download Resume</a>
       </div>
-      <p class="hero-note mt-4">Built with curiosity, coffee, and a love of clean systems.</p>
+      <p class="hero-note mt-4">San Francisco, CA · kxu9787@gmail.com · 530-601-3082</p>
       <div class="welcome-links mt-5 justify-content-center">
         <a href="https://www.github.com/Sgipn" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github fa-lg"></i></a>
         <a href="https://www.linkedin.com/in/kevin42xu" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin fa-lg"></i></a>
@@ -54,8 +54,8 @@
       <h2>About Me</h2>
     </div>
     <div class="section-copy mx-auto" style="max-width: 800px;">
-      <p>I'm a UC Berkeley graduate in Statistics with experience turning complex federal and financial datasets into production-ready analytics. At Deloitte, I built robust pipelines, valuation logic, and automation that made high-stakes government reporting clearer and more reliable.</p>
-      <p>I focus on quantitative risk, modeling transparency, and operational efficiency. Outside work, I enjoy backpacking, chess, and classic rock 🎸</p>
+      <p>Data Engineer with experience architecting and maintaining production PySpark and SQL ETL/ELT pipelines across AWS Glue, Databricks, and S3 data lakes (~2TB). Proven track record of reducing calculation runtimes from weeks to seconds, implementing pipeline observability via AWS Step Functions, and supporting downstream data science teams.</p>
+      <p>Combines production data engineering expertise with advanced statistical rigor (M.A. in Statistics, UC Berkeley) to build scalable, high-integrity data infrastructure.</p>
       <div class="education-card mt-4 p-4 rounded-4">
         <h5 class="education-title"><i class="fa-solid fa-graduation-cap me-2 item-icon" aria-hidden="true"></i>Education</h5>
         <div class="education-item mb-3">
@@ -81,21 +81,18 @@
       <div class="experience-top d-flex flex-column flex-md-row align-items-start justify-content-between gap-3 mb-3">
         <div>
           <h5>Risk & Financial Advisory Consultant</h5>
-          <p class="experience-subtitle mb-0"><em>Deloitte, San Francisco | Aug 2022 – Apr 2025</em></p>
+          <p class="experience-subtitle mb-0"><em>Deloitte, San Francisco | Promoted from Analyst in May 2024</em></p>
+          <p class="text-muted mb-0">Aug 2022 – Apr 2025</p>
         </div>
-        <span class="experience-badge">Promoted from Business Analyst, May 2024</span>
       </div>
-      <p class="experience-intro fst-italic">Supported a DoD FIAR engagement, building the data pipelines and calculation logic behind a $12B Air Force equipment portfolio.</p>
+      <p class="experience-intro fst-italic">Architected production-grade data engineering solutions for a $12B Department of Defense Air Force portfolio.</p>
       <ul>
-        <li>Built SQL/PySpark ingestion pipelines that moved GAFS-BQ transaction data into an S3 data lake and automated intake for 10+ Air Force programs.</li>
-        <li>Translated valuation requirements into modular calculation logic for quarterly Construction-in-Progress reporting.</li>
-        <li>Created transaction-level data-integrity checks and reconciliations against legacy Excel processes, uncovering a significant variance and driving recommendations.</li>
-        <li>Authored SOPs, schemas, and dashboards while mentoring junior data scientists and helping the team scale.</li>
-      </ul>
-      <p class="fst-italic mt-4">Previously, I supported a U.S. Army data-governance engagement, organizing policy clusters and building dashboards to identify redundant policy structures.</p>
-      <ul>
-        <li>Built graph-based clustering logic to organize thousands of Army policies into a multi-level taxonomy for redundancy review.</li>
-        <li>Delivered interactive dashboards on SEMOSS, giving leadership clear visibility into policy health and sunset candidates.</li>
+        <li>Architected high-throughput PySpark and SQL pipelines ingesting millions of monthly transaction records (~1-2 TB S3 data lake) across 80+ major military programs, including F-35 fleet enhancements.</li>
+        <li>Reduced quarterly equipment calculation runtimes from weeks of manual processing to under 30 seconds by migrating ad-hoc Jupyter notebooks into production AWS Glue/Databricks ELT pipelines.</li>
+        <li>Built automated pipeline health alerting and data quality checks using AWS Step Functions, feeding live daily dashboards in Tableau and Power BI for executive oversight.</li>
+        <li>Partnered directly with internal Air Force data science teams to engineer clean feature layers, custom data models, and automated data extracts for predictive modeling.</li>
+        <li>Authored technical documentation (SOPs, schemas, data dictionaries) leveraging LLM tools.</li>
+        <li>Mentored junior data engineers as the team expanded from 4 to 8 and supported adoption by the U.S. Space Force.</li>
       </ul>
     </article>
   </section>
@@ -103,43 +100,40 @@
   <section id="projects" class="section-block section-card my-5 p-5">
     <div class="section-header text-center mb-4">
       <span class="section-eyebrow">Projects</span>
-      <h2>Data Science  Work</h2>
+      <h2>Data Science & Research Projects</h2>
     </div>
     <div class="row gx-4 gy-4">
       <div class="col-lg-6">
         <div class="project-card card shadow-sm p-4">
-          <span class="project-label">Modeling</span>
-          <h5 class="project-title">Feature Cost vs. Signal in Credit Risk Prediction</h5>
-          <p class="text-muted mb-2"><em>Jan – May 2026</em></p>
-          <p>Built 11 model specifications to evaluate which data inputs justified acquisition cost for 30K accounts, showing a 2-variable model preserved accuracy while reducing operational overhead.</p>
-          <p class="mb-2"><strong>Languages:</strong> Python, R</p>
+          <span class="project-label">Geospatial Analysis</span>
+          <h5 class="project-title">Geospatial Satellite Imagery and Cloud-Detection Analysis</h5>
+          <p class="text-muted mb-2"><em>Research project</em></p>
+          <p>Developed multi-modal feature extraction from satellite imagery using convolutional autoencoders and tree-based ensembles for cloud cover and terrain classification.</p>
           <div class="d-flex flex-wrap gap-2 align-items-center mt-3">
-            <a href="https://github.com/Sgipn/Feature_Cost_vs_Signal_in_Credit_Risk_Prediction" class="btn btn-outline-light btn-sm">GitHub</a>
             <button class="project-toggle btn btn-secondary btn-sm" type="button" aria-expanded="false">View details</button>
           </div>
           <div class="project-details mt-3" hidden>
             <ul>
-              <li>Compared feature acquisition signal across model versions with AUC and cost tradeoffs.</li>
-              <li>Documented a simplified production path that supports faster iteration and lower feature engineering effort.</li>
+              <li>Built custom convolutional autoencoders and LightGBM ensembles on MISR imagery.</li>
+              <li>Designed spatial block cross-validation to prevent geographic data leakage.</li>
+              <li>Tested boundary degradation and noise propagation to ensure robust spatial predictions.</li>
             </ul>
           </div>
         </div>
       </div>
       <div class="col-lg-6">
         <div class="project-card card shadow-sm p-4">
-          <span class="project-label">Forecasting</span>
-          <h5 class="project-title">Forecasting: CA Industrial Emissions</h5>
-          <p class="text-muted mb-2"><em>Sep – Dec 2025</em></p>
-          <p>Forecasted emissions costs with SARIMA, Lasso, and GBM, then distilled a 4-feature stakeholder-ready model that matched production accuracy with better interpretability.</p>
-          <p class="mb-2"><strong>Languages:</strong> Python, R</p>
+          <span class="project-label">Risk Modeling</span>
+          <h5 class="project-title">Asymmetric Credit Risk & Infrastructure Failure Sensitivity Modeling</h5>
+          <p class="text-muted mb-2"><em>Modeling research</em></p>
+          <p>Built cost-sensitive classification models and structural diagnostics to evaluate risk with asymmetric loss and operational pipeline cost in mind.</p>
           <div class="d-flex flex-wrap gap-2 align-items-center mt-3">
-            <a href="https://github.com/Sgipn/CA_Industrial_Emissions_Forecasting" class="btn btn-outline-light btn-sm">GitHub</a>
             <button class="project-toggle btn btn-secondary btn-sm" type="button" aria-expanded="false">View details</button>
           </div>
           <div class="project-details mt-3" hidden>
             <ul>
-              <li>Created easy-to-read forecast summaries for stakeholders and compared model families using practical accuracy metrics.</li>
-              <li>Captured the production-ready workflow in reusable notebooks and charts for future emissions scenario updates.</li>
+              <li>Built XGBoost and LightGBM models under a 5:1 false-negative penalty.</li>
+              <li>Reduced multicollinearity with VIF analysis to show a parsimonious 2-variable model with comparable performance.</li>
             </ul>
           </div>
         </div>
@@ -147,17 +141,17 @@
       <div class="col-lg-12">
         <div class="project-card card shadow-sm p-4 in-progress-card">
           <div class="d-flex align-items-center justify-content-between flex-column flex-md-row gap-3 mb-3">
-            <span class="badge bg-secondary">In Progress</span>
-            <span class="project-label">Streaming</span>
+            <span class="badge bg-secondary">Research</span>
+            <span class="project-label">AI</span>
           </div>
-          <h5 class="project-title">Streaming Pipeline for Emissions Forecasting</h5>
-          <p>Extending the CA Industrial Emissions project with Apache Kafka and Airflow to bring forecast inputs into a live pipeline built for fast operational decisions.</p>
-          <p class="mb-0"><strong>Tools:</strong> Apache Kafka, Apache Airflow, Python</p>
+          <h5 class="project-title">Parameter-Efficient Fine-tuning (LoRA) for Sequence Data</h5>
+          <p>Applied PEFT/LoRA to transformer models for classification tasks and validated interpretability and robustness through feature attribution and noise experiments.</p>
           <button class="project-toggle btn btn-secondary btn-sm mt-3" type="button" aria-expanded="false">View details</button>
           <div class="project-details mt-3" hidden>
             <ul>
-              <li>Building an event-driven layer that ingests sensor and regulatory data into a daily scoring pipeline.</li>
-              <li>Designing automatic health checks and replay logic so forecasts stay resilient when source data changes.</li>
+              <li>Fine-tuned BERT-based models with PEFT/LoRA and analyzed feature stability using SHAP and LIME.</li>
+              <li>Evaluated temporal models with ADF, Ljung-Box, and Breusch-Pagan testing.</li>
+              <li>Corrected open-book vs closed-book evaluation leaks for true rolling forecast benchmarks.</li>
             </ul>
           </div>
         </div>
@@ -173,37 +167,45 @@
     <div class="skill-grid row gx-4 gy-4">
       <div class="col-md-4">
         <div class="skill-card p-4 shadow-sm">
+          <h5><i class="fa-solid fa-server me-2 item-icon" aria-hidden="true"></i>Data Engineering & Big Data</h5>
+          <div class="skill-list mt-3">
+            <span class="skill-chip">Spark / PySpark</span>
+            <span class="skill-chip">Databricks</span>
+            <span class="skill-chip">AWS Glue</span>
+            <span class="skill-chip">Step Functions</span>
+            <span class="skill-chip">Athena</span>
+            <span class="skill-chip">Redshift</span>
+            <span class="skill-chip">Sagemaker</span>
+            <span class="skill-chip">dbt</span>
+            <span class="skill-chip">Parquet</span>
+            <span class="skill-chip">MLflow</span>
+            <span class="skill-chip">Git</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="skill-card p-4 shadow-sm">
           <h5><i class="fa-solid fa-code me-2 item-icon" aria-hidden="true"></i>Languages</h5>
           <div class="skill-list mt-3">
-            <span class="skill-chip"><i class="fa-brands fa-python"></i>Python</span>
-            <span class="skill-chip"><i class="fa-solid fa-database"></i>SQL</span>
-            <span class="skill-chip"><i class="fa-brands fa-r-project"></i>R</span>
-            <span class="skill-chip"><i class="fa-solid fa-fire"></i>PySpark</span>
-            <span class="skill-chip"><i class="fa-solid fa-terminal"></i>Bash</span>
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">SQL</span>
+            <span class="skill-chip">R</span>
+            <span class="skill-chip">Bash</span>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="skill-card p-4 shadow-sm">
-          <h5><i class="fa-solid fa-server me-2 item-icon" aria-hidden="true"></i>Data Engineering</h5>
+          <h5><i class="fa-solid fa-chart-pie me-2 item-icon" aria-hidden="true"></i>Observability & Enablement</h5>
           <div class="skill-list mt-3">
-            <span class="skill-chip">Databricks</span>
-            <span class="skill-chip">S3</span>
-            <span class="skill-chip">AWS</span>
-            <span class="skill-chip">MLflow</span>
             <span class="skill-chip">Tableau</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="skill-card p-4 shadow-sm">
-          <h5><i class="fa-solid fa-chart-pie me-2 item-icon" aria-hidden="true"></i>Analytics</h5>
-          <div class="skill-list mt-3">
-            <span class="skill-chip">Forecasting</span>
-            <span class="skill-chip">Regression</span>
-            <span class="skill-chip">Scenario Analysis</span>
+            <span class="skill-chip">Power BI</span>
+            <span class="skill-chip">SEMOSS</span>
+            <span class="skill-chip">Pipeline Monitoring</span>
+            <span class="skill-chip">Feature Engineering</span>
+            <span class="skill-chip">Reconciliation</span>
             <span class="skill-chip">Variance Analysis</span>
-            <span class="skill-chip">Causal Inference</span>
+            <span class="skill-chip">Time Series Forecasting</span>
           </div>
         </div>
       </div>
