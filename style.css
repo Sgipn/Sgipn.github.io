@@ -16,10 +16,10 @@ body, button, input, textarea {
 
 body {
   min-height: 100vh;
-  color: #e7edf8;
-  background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.16), transparent 24%),
-              radial-gradient(circle at 85% 20%, rgba(168, 85, 247, 0.14), transparent 20%),
-              linear-gradient(180deg, #08101f 0%, #101f36 42%, #08101f 100%);
+  color: #f4f7ff;
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.20), transparent 24%),
+              radial-gradient(circle at 82% 18%, rgba(236, 72, 153, 0.18), transparent 22%),
+              linear-gradient(180deg, #0f1c39 0%, #1a2f58 42%, #0d1a2d 100%);
 }
 
 main {
@@ -146,8 +146,8 @@ main {
 }
 
 .section-card {
-  background: rgba(15, 23, 42, 0.84);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 32px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.16);
 }
@@ -207,9 +207,9 @@ main {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: radial-gradient(circle at 20% 20%, rgba(125, 211, 255, 0.18), transparent 16%),
-              radial-gradient(circle at 84% 40%, rgba(168, 85, 247, 0.12), transparent 14%);
-  opacity: 0.55;
+  background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.24), transparent 16%),
+              radial-gradient(circle at 80% 40%, rgba(236, 72, 153, 0.16), transparent 14%);
+  opacity: 0.68;
   pointer-events: none;
 }
 
@@ -217,7 +217,13 @@ main {
   max-width: 680px;
   margin: 0 auto;
   font-size: 1.05rem;
-  color: #cfd8e6;
+  color: #e2e8f4;
+}
+
+.hero-note {
+  color: #a5b4fc;
+  font-size: 0.98rem;
+  margin-top: 1rem;
 }
 
 .hero-actions .btn {
@@ -239,7 +245,7 @@ main {
 }
 
 .navbar-tagline {
-  color: #94a3b8;
+  color: #cbd5e1;
   font-size: 0.95rem;
 }
 
@@ -276,6 +282,10 @@ main {
   letter-spacing: 0.04em;
 }
 
+.item-icon {
+  opacity: 0.85;
+}
+
 .experience-badge {
   background: rgba(59, 130, 246, 0.08);
   border-radius: 999px;
@@ -289,6 +299,96 @@ main {
 .project-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 40px 100px rgba(0, 0, 0, 0.24);
+}
+
+.project-details {
+  transition: max-height 260ms ease, opacity 260ms ease, transform 260ms ease;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.project-details.open {
+  max-height: 420px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.education-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.education-title {
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+}
+
+.company-logo,
+.school-logo {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  filter: brightness(1.05);
+}
+
+.school-photo {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 20px;
+  display: block;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.education-school-row {
+  align-items: center;
+}
+
+.education-school {
+  color: #eef2ff;
+  margin-bottom: 0.2rem;
+}
+
+.education-degree {
+  color: #cbd5e1;
+  font-size: 0.98rem;
+}
+
+.project-toggle {
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #e2e8f0;
+}
+
+.top-button {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.88);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition: opacity 200ms ease, transform 200ms ease;
+  z-index: 20;
+}
+
+.top-button.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav-link.active {
+  color: #7dd3fc !important;
 }
 
 .skill-grid {
@@ -323,15 +423,27 @@ main {
 }
 
 footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   margin-top: 3rem;
   padding-top: 1.5rem;
   padding-bottom: 2rem;
-  color: #94a3b8;
+  color: #cbd5e1;
 }
 
 footer p {
   margin: 0;
+}
+
+.footer-love {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 24px;
+  padding: 1.25rem 1rem;
+}
+
+.love-text {
+  color: #7dd3fc;
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }
 
 @media (max-width: 768px) {

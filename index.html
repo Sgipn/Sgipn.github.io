@@ -14,7 +14,7 @@
   <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
     <div>
       <h1 class="navbar-brand mb-1">Kevin Xu</h1>
-      <p class="navbar-tagline mb-0">Data Scientist · Consultant · Systems Designer</p>
+      <p class="navbar-tagline mb-0">Data Scientist · Consultant · Backpacker</p>
     </div>
     <ul class="nav justify-content-center">
       <li class="nav-item mx-2"><a class="nav-link" href="#about">About</a></li>
@@ -34,11 +34,12 @@
     <div class="hero-card mx-auto p-5">
       <p class="eyebrow">Hello, I’m</p>
       <h2 class="hero-title">Kevin Xu</h2>
-      <p class="hero-copy mx-auto">I shape data systems that behave with precision and present insight with clarity. My work makes risk-aware decisions easier to see and easier to act on.</p>
+      <p class="hero-copy mx-auto">I build thoughtful data systems that help teams make smarter decisions, and I care about the people behind the numbers.</p>
       <div class="hero-actions mt-4">
         <a href="#about" class="btn btn-outline-light btn-lg mx-2">About</a>
         <a href="KevinXu_Resume_7_23.pdf" class="btn btn-primary btn-lg mx-2">Download Resume</a>
       </div>
+      <p class="hero-note mt-4">Built with curiosity, coffee, and a love of clean systems.</p>
       <div class="welcome-links mt-5 justify-content-center">
         <a href="https://www.github.com/Sgipn" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github fa-lg"></i></a>
         <a href="https://www.linkedin.com/in/kevin42xu" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin fa-lg"></i></a>
@@ -54,20 +55,37 @@
     </div>
     <div class="section-copy mx-auto" style="max-width: 800px;">
       <p>I'm a UC Berkeley graduate in Statistics with experience turning complex federal and financial datasets into production-ready analytics. At Deloitte, I built robust pipelines, valuation logic, and automation that made high-stakes government reporting clearer and more reliable.</p>
-      <p>I focus on quantitative risk, modeling transparency, and operational efficiency. Outside work, I enjoy backpacking, chess, and classic rock 🎸 — I like systems that feel elegant and effortless.</p>
+      <p>I focus on quantitative risk, modeling transparency, and operational efficiency. Outside work, I enjoy backpacking, chess, and classic rock 🎸</p>
+      <div class="education-card mt-4 p-4 rounded-4">
+        <h5 class="education-title"><i class="fa-solid fa-graduation-cap me-2 item-icon" aria-hidden="true"></i>Education</h5>
+        <div class="education-item mb-3">
+          <div class="education-school-row d-flex align-items-center gap-2 mb-2">
+            <img class="school-logo" src="https://www.google.com/s2/favicons?sz=64&domain=berkeley.edu" alt="UC Berkeley logo">
+            <strong>University of California, Berkeley</strong>
+          </div>
+          <img class="school-photo mb-3" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=640&q=80" alt="Sather Tower at UC Berkeley">
+          <p class="education-degree mb-1">Master of Arts, Statistics | Elizabeth Scott Excellence Scholarship (merit)</p>
+          <p class="text-muted mb-0">Sep 2024 – May 2026</p>
+        </div>
+        <div class="education-item">
+          <p class="education-school mb-1"><strong>University of California, Davis</strong></p>
+          <p class="education-degree mb-1">Bachelor of Science, Statistics | Dean's List</p>
+          <p class="text-muted mb-0">Sep 2020 – Jun 2022</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="experience" class="section-block section-card my-5 p-5">
     <div class="section-header text-center mb-4">
       <span class="section-eyebrow">Work</span>
-      <h2>Experience</h2>
+      <h2><i class="fa-solid fa-briefcase me-2 item-icon" aria-hidden="true"></i>Experience</h2>
     </div>
     <article class="experience-card mb-4">
       <div class="experience-top d-flex flex-column flex-md-row align-items-start justify-content-between gap-3 mb-3">
         <div>
           <h5>Risk & Financial Advisory Consultant</h5>
-          <p class="experience-subtitle mb-0"><em>Deloitte, San Francisco | Aug 2022 – Apr 2025</em></p>
+          <p class="experience-subtitle mb-0"><em><img class="company-logo me-2" src="https://www.google.com/s2/favicons?sz=64&domain=deloitte.com" alt="Deloitte logo">Deloitte, San Francisco | Aug 2022 – Apr 2025</em></p>
         </div>
         <span class="experience-badge">Promoted from Business Analyst, May 2024</span>
       </div>
@@ -94,33 +112,58 @@
     <div class="row gx-4 gy-4">
       <div class="col-lg-6">
         <div class="project-card card shadow-sm p-4">
-          <span class="project-label">Modeling</span>
+          <span class="project-label"><img class="project-icon" src="https://cdn.simpleicons.org/scikitlearn/ffffff" alt="Modeling icon">Modeling</span>
           <h5 class="project-title">Feature Cost vs. Signal in Credit Risk Prediction</h5>
           <p class="text-muted mb-2"><em>Jan – May 2026</em></p>
           <p>Built 11 model specifications to evaluate which data inputs justified acquisition cost for 30K accounts, showing a 2-variable model preserved accuracy while reducing operational overhead.</p>
           <p class="mb-2"><strong>Languages:</strong> Python, R</p>
-          <a href="https://github.com/Sgipn/Feature_Cost_vs_Signal_in_Credit_Risk_Prediction" class="btn btn-outline-light btn-sm">GitHub</a>
+          <div class="d-flex flex-wrap gap-2 align-items-center mt-3">
+            <a href="https://github.com/Sgipn/Feature_Cost_vs_Signal_in_Credit_Risk_Prediction" class="btn btn-outline-light btn-sm">GitHub</a>
+            <button class="project-toggle btn btn-secondary btn-sm" type="button" aria-expanded="false">View details</button>
+          </div>
+          <div class="project-details mt-3" hidden>
+            <ul>
+              <li>Compared feature acquisition signal across model versions with AUC and cost tradeoffs.</li>
+              <li>Documented a simplified production path that supports faster iteration and lower feature engineering effort.</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="col-lg-6">
         <div class="project-card card shadow-sm p-4">
-          <span class="project-label">Forecasting</span>
+          <span class="project-label"><img class="project-icon" src="https://cdn.simpleicons.org/python/ffffff" alt="Forecasting icon">Forecasting</span>
           <h5 class="project-title">Forecasting: CA Industrial Emissions</h5>
           <p class="text-muted mb-2"><em>Sep – Dec 2025</em></p>
           <p>Forecasted emissions costs with SARIMA, Lasso, and GBM, then distilled a 4-feature stakeholder-ready model that matched production accuracy with better interpretability.</p>
           <p class="mb-2"><strong>Languages:</strong> Python, R</p>
-          <a href="https://github.com/Sgipn/CA_Industrial_Emissions_Forecasting" class="btn btn-outline-light btn-sm">GitHub</a>
+          <div class="d-flex flex-wrap gap-2 align-items-center mt-3">
+            <a href="https://github.com/Sgipn/CA_Industrial_Emissions_Forecasting" class="btn btn-outline-light btn-sm">GitHub</a>
+            <button class="project-toggle btn btn-secondary btn-sm" type="button" aria-expanded="false">View details</button>
+          </div>
+          <div class="project-details mt-3" hidden>
+            <ul>
+              <li>Created easy-to-read forecast summaries for stakeholders and compared model families using practical accuracy metrics.</li>
+              <li>Captured the production-ready workflow in reusable notebooks and charts for future emissions scenario updates.</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="col-lg-12">
         <div class="project-card card shadow-sm p-4 in-progress-card">
           <div class="d-flex align-items-center justify-content-between flex-column flex-md-row gap-3 mb-3">
             <span class="badge bg-secondary">In Progress</span>
-            <span class="project-label">Streaming</span>
+            <span class="project-label"><img class="project-icon" src="https://cdn.simpleicons.org/apacheairflow/ffffff" alt="Streaming icon">Streaming</span>
           </div>
           <h5 class="project-title">Streaming Pipeline for Emissions Forecasting</h5>
           <p>Extending the CA Industrial Emissions project with Apache Kafka and Airflow to bring forecast inputs into a live pipeline built for fast operational decisions.</p>
           <p class="mb-0"><strong>Tools:</strong> Apache Kafka, Apache Airflow, Python</p>
+          <button class="project-toggle btn btn-secondary btn-sm mt-3" type="button" aria-expanded="false">View details</button>
+          <div class="project-details mt-3" hidden>
+            <ul>
+              <li>Building an event-driven layer that ingests sensor and regulatory data into a daily scoring pipeline.</li>
+              <li>Designing automatic health checks and replay logic so forecasts stay resilient when source data changes.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -134,37 +177,37 @@
     <div class="skill-grid row gx-4 gy-4">
       <div class="col-md-4">
         <div class="skill-card p-4 shadow-sm">
-          <h5>Languages</h5>
+          <h5><i class="fa-solid fa-code me-2 item-icon" aria-hidden="true"></i>Languages</h5>
           <div class="skill-list mt-3">
-            <span class="skill-chip">Python</span>
-            <span class="skill-chip">SQL</span>
-            <span class="skill-chip">R</span>
-            <span class="skill-chip">PySpark</span>
-            <span class="skill-chip">Bash</span>
+            <span class="skill-chip"><i class="fa-brands fa-python"></i>Python</span>
+            <span class="skill-chip"><i class="fa-solid fa-database"></i>SQL</span>
+            <span class="skill-chip"><i class="fa-brands fa-r-project"></i>R</span>
+            <span class="skill-chip"><i class="fa-solid fa-fire"></i>PySpark</span>
+            <span class="skill-chip"><i class="fa-solid fa-terminal"></i>Bash</span>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="skill-card p-4 shadow-sm">
-          <h5>Data Engineering</h5>
+          <h5><i class="fa-solid fa-server me-2 item-icon" aria-hidden="true"></i>Data Engineering</h5>
           <div class="skill-list mt-3">
-            <span class="skill-chip">Databricks</span>
-            <span class="skill-chip">S3</span>
-            <span class="skill-chip">AWS</span>
-            <span class="skill-chip">MLflow</span>
-            <span class="skill-chip">Tableau</span>
+            <span class="skill-chip"><img class="skill-icon" src="https://cdn.simpleicons.org/databricks/ffffff" alt="Databricks icon">Databricks</span>
+            <span class="skill-chip"><img class="skill-icon" src="https://www.google.com/s2/favicons?sz=64&domain=aws.amazon.com" alt="AWS icon">S3</span>
+            <span class="skill-chip"><img class="skill-icon" src="https://www.google.com/s2/favicons?sz=64&domain=aws.amazon.com" alt="AWS icon">AWS</span>
+            <span class="skill-chip"><img class="skill-icon" src="https://cdn.simpleicons.org/r/ffffff" alt="MLflow icon">MLflow</span>
+            <span class="skill-chip"><img class="skill-icon" src="https://www.google.com/s2/favicons?sz=64&domain=tableau.com" alt="Tableau icon">Tableau</span>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="skill-card p-4 shadow-sm">
-          <h5>Analytics</h5>
+          <h5><i class="fa-solid fa-chart-pie me-2 item-icon" aria-hidden="true"></i>Analytics</h5>
           <div class="skill-list mt-3">
-            <span class="skill-chip">Forecasting</span>
-            <span class="skill-chip">Regression</span>
-            <span class="skill-chip">Scenario Analysis</span>
-            <span class="skill-chip">Variance Analysis</span>
-            <span class="skill-chip">Causal Inference</span>
+            <span class="skill-chip"><img class="skill-icon" src="https://cdn.simpleicons.org/python/ffffff" alt="Forecasting icon">Forecasting</span>
+            <span class="skill-chip"><img class="skill-icon" src="https://cdn.simpleicons.org/r/ffffff" alt="Regression icon">Regression</span>
+            <span class="skill-chip"><img class="skill-icon" src="https://cdn.simpleicons.org/scikitlearn/ffffff" alt="Scenario Analysis icon">Scenario Analysis</span>
+            <span class="skill-chip"><img class="skill-icon" src="https://cdn.simpleicons.org/pandas/ffffff" alt="Variance Analysis icon">Variance Analysis</span>
+            <span class="skill-chip"><img class="skill-icon" src="https://cdn.simpleicons.org/apacheairflow/ffffff" alt="Causal Inference icon">Causal Inference</span>
           </div>
         </div>
       </div>
@@ -173,9 +216,50 @@
 
 </main>
 
-<footer class="text-center text-muted py-4">
-  <p class="mb-0">Kevin Xu · kxu9787@gmail.com</p>
+<footer class="text-center text-muted py-4 footer-love">
+  <p class="mb-1">Kevin Xu · kxu9787@gmail.com</p>
+  <p class="love-text">Made with love ❤️</p>
 </footer>
 
+<button id="topButton" class="top-button" aria-label="Scroll to top" type="button">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script>
+  const projectToggles = document.querySelectorAll('.project-toggle');
+  projectToggles.forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.project-card');
+      const details = card.querySelector('.project-details');
+      const expanded = details.hidden;
+      details.hidden = !expanded;
+      details.classList.toggle('open', expanded);
+      button.textContent = expanded ? 'Hide details' : 'View details';
+      button.setAttribute('aria-expanded', String(expanded));
+    });
+  });
+
+  const sections = document.querySelectorAll('main section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const navLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+      if (!navLink) return;
+      navLink.classList.toggle('active', entry.isIntersecting);
+    });
+  }, {
+    rootMargin: '-45% 0px -45% 0px',
+    threshold: 0.2,
+  });
+  sections.forEach(section => observer.observe(section));
+
+  const topButton = document.getElementById('topButton');
+  window.addEventListener('scroll', () => {
+    topButton.classList.toggle('visible', window.scrollY > 420);
+  });
+  topButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
 </body>
 </html>
