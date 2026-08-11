@@ -17,7 +17,7 @@
       <p class="navbar-tagline mb-0">Data Engineer</p>
     </div>
     <ul class="nav justify-content-center">
-      <li class="nav-item mx-2"><a class="nav-link" href="#about">About</a></li>
+      <li class="nav-item mx-2"><a class="nav-link" href="#education">Education</a></li>
       <li class="nav-item mx-2"><a class="nav-link" href="#experience">Experience</a></li>
       <li class="nav-item mx-2"><a class="nav-link" href="#projects">Projects</a></li>
       <li class="nav-item mx-2"><a class="nav-link" href="#skills">Skills</a></li>
@@ -30,13 +30,13 @@
 
   <section class="hero-section text-center mb-5">
     <div class="hero-glow"></div>
-    <img src="KX.jpg" alt="Kevin Xu" class="avatar-img mx-auto mb-4">
     <div class="hero-card mx-auto p-5">
       <p class="eyebrow">Hello, I’m</p>
       <h2 class="hero-title">Kevin Xu</h2>
-      <p class="hero-copy mx-auto">Hi, I'm Kevin Xu, a passionate Data Engineer and Machine Learning Engineer focused on crafting intelligent, data-driven solutions. Feel free to explore my work and get in touch!</p>
+      <img src="KX.jpg" alt="Kevin Xu" class="avatar-img mx-auto my-4">
+      <p class="hero-copy mx-auto">Welcome. Feel free to explore my work and get in touch!</p>
       <div class="hero-actions mt-4">
-        <a href="#about" class="btn btn-outline-light btn-lg mx-2">About</a>
+        <a href="#education" class="btn btn-outline-light btn-lg mx-2">Education</a>
         <a href="KevinXu_Resume_DE_WorkingVersion.docx" class="btn btn-primary btn-lg mx-2">Download Resume</a>
       </div>
       <p class="hero-note mt-4">San Francisco, CA · kxu9787@gmail.com · 530-601-3082</p>
@@ -45,19 +45,23 @@
         <a href="https://www.linkedin.com/in/kevin42xu" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin fa-lg"></i></a>
         <a href="mailto:kxu9787@gmail.com" title="Email"><i class="fa-solid fa-envelope fa-lg"></i></a>
       </div>
+      <div class="hero-about mx-auto mt-5">
+        <p>Data Engineer with experience architecting and maintaining production PySpark and SQL ETL/ELT pipelines across AWS Glue, Databricks, and S3 data lakes (~2TB). Proven track record of reducing calculation runtimes from weeks to seconds, implementing pipeline observability via AWS Step Functions, and supporting downstream data science teams.</p>
+        <p>Masters degree in Statistics from UC Berkeley.</p>
+      </div>
     </div>
   </section>
 
-  <section id="about" class="section-block section-card my-5 p-5">
+  <section id="education" class="section-block section-card my-5 p-5">
     <div class="section-header text-center mb-4">
-      <span class="section-eyebrow">About</span>
-      <h2>About Me</h2>
+      <span class="section-eyebrow">Education</span>
+      <h2><i class="fa-solid fa-graduation-cap me-2 item-icon" aria-hidden="true"></i>Education</h2>
     </div>
-    <div class="section-copy mx-auto" style="max-width: 800px;">
-      <p>Data Engineer with experience architecting and maintaining production PySpark and SQL ETL/ELT pipelines across AWS Glue, Databricks, and S3 data lakes (~2TB). Proven track record of reducing calculation runtimes from weeks to seconds, implementing pipeline observability via AWS Step Functions, and supporting downstream data science teams.</p>
-      <p> Masters degree in Statistics from UC Berkeley.</p>
-      <div class="education-card mt-4 p-4 rounded-4">
-        <h5 class="education-title"><i class="fa-solid fa-graduation-cap me-2 item-icon" aria-hidden="true"></i>Education</h5>
+    <div class="d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
+      <div class="education-media">
+        <img src="linkedin_berk_banner.jpg" alt="UC Berkeley campus" class="education-image">
+      </div>
+      <div class="education-card p-4 rounded-4 flex-grow-1">
         <div class="education-item mb-3">
           <p class="education-school mb-1"><strong>University of California, Berkeley</strong></p>
           <p class="education-degree mb-0">Master of Arts, Statistics</p>
@@ -80,39 +84,57 @@
       <h2><i class="fa-solid fa-briefcase me-2 item-icon" aria-hidden="true"></i>Experience</h2>
     </div>
     <article class="experience-card mb-4">
-      <div class="experience-top d-flex flex-column flex-md-row align-items-start justify-content-between gap-3 mb-3">
-        <div>
+      <div class="experience-row d-flex flex-column flex-lg-row gap-4 gap-lg-5">
+        <div class="experience-media">
+          <img src="logo-deloitte.png" alt="Deloitte logo" class="experience-logo">
+        </div>
+        <div class="experience-content flex-grow-1">
           <h5>Consultant (Data Engineering)</h5>
           <p class="experience-subtitle mb-0"><em>Deloitte, San Francisco | Promoted from Analyst in May 2024</em></p>
-          <p class="experience-date mb-0">Aug 2022 – Apr 2025</p>
+          <p class="experience-date mb-3">Aug 2022 – Apr 2025</p>
+          <div class="experience-subgroup">
+            <div class="experience-subgroup-header d-flex flex-wrap align-items-center gap-2 mb-2">
+              <span class="badge bg-secondary">FIAR Engagement</span>
+              <span class="experience-subgroup-dates">Apr 2023 – Apr 2025</span>
+            </div>
+            <p class="experience-intro">Supported a Department of Defense (DoD) Financial Improvement and Audit Remediation (FIAR) engagement, <strong>building the data pipelines and calculation logic behind a $12.2B Air Force military equipment portfolio</strong>.</p>
+            <ul>
+              <li>Architected two high-throughput ELT pipelines feeding a ~1–2 TB S3 data lake: a SQL-based pipeline (AWS Glue, Databricks, PySpark, Parquet) ingesting millions of monthly transaction records across <strong>80+ major military programs</strong> (e.g., F-35 fleet enhancements), and an API-based tool automating progress-report intake across 10+ programs. Re-engineered both from ad hoc notebooks into modular, version-controlled production components.</li>
+              <li>Cut quarterly equipment calculation runtimes from weeks of manual processing to <strong>under 10 minutes</strong> by migrating the SQL pipeline into production AWS Glue/Databricks ELT jobs.</li>
+              <li>Standardized the calculation logic behind a core metric for the team's <strong>Construction-In-Progress (CIP) deliverable</strong>, keeping definitions consistent across the team as underlying business rules evolved.</li>
+              <li>Built <strong>automated pipeline health alerting and data-quality checks</strong> with AWS Step Functions, feeding Tableau and Power BI dashboards for quarterly client deliverables and internal stakeholder reporting.</li>
+              <li>Wrote data-integrity checks reconciling the team's automated deliverable against a legacy manual (Excel-based) process at the transaction level; authored the reconciliation logic and <strong>traced a significant unaccounted variance</strong>.</li>
+              <li>Owned technical documentation (SOPs, schemas, data dictionaries) to standardize pipeline logic across the team, using Deloitte's internal ChatGPT-based LLM tool to accelerate drafting and debugging; <strong>mentored junior data scientists as the team scaled from 4 to 8</strong> and the program expanded to Space Force.</li>
+            </ul>
+          </div>
+          <div class="experience-subgroup">
+            <div class="experience-subgroup-header d-flex flex-wrap align-items-center gap-2 mb-2">
+              <span class="badge bg-secondary">SEMOSS / Army Engagement</span>
+              <span class="experience-subgroup-dates">Sep 2022 – Apr 2023</span>
+            </div>
+            <p class="experience-intro">Supported a data-governance engagement for the U.S. Army on Deloitte's SEMOSS platform, building dashboards and analysis to help identify and sunset redundant Army policies.</p>
+            <ul>
+              <li>Built graph-based clustering logic organizing <strong>thousands of Army policies</strong> into a multi-level taxonomy (standards, clusters, systems) to identify redundant, sunset-able policies; visualized findings through interactive SEMOSS dashboards presented quarterly, giving Army leadership line of sight into policy redundancy.</li>
+              <li>Built additional dashboards using SEMOSS, Python, SQL, and HTML, including an <strong>enterprise health grid</strong> tracking status and redundancy counts across the policy taxonomy's systems, hosted on AWS infrastructure.</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <p class="experience-intro fst-italic">Supported a Department of Defense (DoD) Financial Improvement and Audit Remediation (FIAR) engagement from Apr 2023 to Apr 2025, building the data pipelines and calculation logic behind a $12B Air Force military equipment portfolio.</p>
-      <ul>
-        <li>Architected two high-throughput ELT pipelines feeding a ~1–2 TB S3 data lake: a SQL-based pipeline (AWS Glue, Databricks, PySpark, Parquet) ingesting millions of monthly transaction records across 80+ major military programs (e.g., F-35 fleet enhancements), and an API-based tool automating progress-report intake across 10+ programs. Re-engineered both from ad hoc notebooks into modular, version-controlled production components.</li>
-        <li>Cut quarterly equipment calculation runtimes from weeks of manual processing to under 10 minutes by migrating the SQL pipeline into production AWS Glue/Databricks ELT jobs.</li>
-        <li>Standardized the calculation logic behind a core metric for the team's Construction-In-Progress (CIP) deliverable, keeping definitions consistent across the team as underlying business rules evolved.</li>
-        <li>Built automated pipeline health alerting and data-quality checks with AWS Step Functions, feeding Tableau and Power BI dashboards for quarterly client deliverables and internal stakeholder reporting.</li>
-        <li>Wrote data-integrity checks reconciling the team's automated deliverable against a legacy manual (Excel-based) process at the transaction level; authored the reconciliation logic and traced a significant unaccounted variance.</li>
-        <li>Owned technical documentation (SOPs, schemas, data dictionaries) to standardize pipeline logic across the team, using Deloitte's internal ChatGPT-based LLM tool to accelerate drafting and debugging; mentored junior data scientists as the team scaled from 4 to 8 and the program expanded to Space Force.</li>
-      </ul>
-      <p class="experience-intro fst-italic">From Sep 2022 to Apr 2023, supported a data-governance engagement for the U.S. Army on Deloitte's SEMOSS platform, building dashboards and analysis to help identify and sunset redundant Army policies.</p>
-      <ul>
-        <li>Built graph-based clustering logic organizing thousands of Army policies into a multi-level taxonomy (standards, clusters, systems) to identify redundant, sunset-able policies; visualized findings through interactive SEMOSS dashboards presented quarterly, giving Army leadership line of sight into policy redundancy.</li>
-        <li>Built additional dashboards using SEMOSS, Python, SQL, and HTML, including an enterprise health grid tracking status and redundancy counts across the policy taxonomy's systems, hosted on AWS infrastructure.</li>
-      </ul>
     </article>
     <article class="experience-card mb-4">
-      <div class="experience-top d-flex flex-column flex-md-row align-items-start justify-content-between gap-3 mb-3">
-        <div>
+      <div class="experience-row d-flex flex-column flex-lg-row gap-4 gap-lg-5">
+        <div class="experience-media experience-media-compact">
+          <img src="uc-logo.png" alt="UC Davis logo" class="experience-logo">
+        </div>
+        <div class="experience-content flex-grow-1">
           <h5>Statistics Researcher</h5>
           <p class="experience-subtitle mb-0"><em>UC Davis Computational Communications Lab, Davis, CA</em></p>
-          <p class="experience-date mb-0">Aug 2021 – Nov 2021</p>
+          <p class="experience-date mb-3">Aug 2021 – Nov 2021</p>
+          <ul>
+            <li>Applied canonical correlation and factor analysis across 31 psychological measures and 25 outcomes from 22 randomized experiments to identify traits predicting resilience against algorithmic manipulation; contributed to peer-reviewed research under PI Martin Hilbert.</li>
+          </ul>
         </div>
       </div>
-      <ul>
-        <li>Applied canonical correlation and factor analysis across 31 psychological measures and 25 outcomes from 22 randomized experiments to identify traits predicting resilience against algorithmic manipulation; contributed to peer-reviewed research under PI Martin Hilbert.</li>
-      </ul>
     </article>
   </section>
 
@@ -140,7 +162,7 @@
           <p class="project-meta mb-3"><strong>Frameworks:</strong> DuckDB, dbt / MetricFlow, ChromaDB, sqlglot, Anthropic Claude API</p>
           <div class="d-flex flex-wrap gap-2">
             <a href="https://github.com/Sgipn/Text_to_SQL_Agent_for_Revenue_and_Churn_Analytics" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-            <a href="https://semantic-metric-repository.onrender.com/" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            <a href="https://semantic-metric-repository.onrender.com/" class="btn btn-live-demo" target="_blank" rel="noopener noreferrer">Live Demo</a>
           </div>
           <p class="project-note mt-2 mb-0">Hosted on a free tier so the demo may take ~30s to wake up on first load.</p>
         </div>
