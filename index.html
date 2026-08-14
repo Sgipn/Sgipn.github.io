@@ -139,6 +139,25 @@
     </div>
     <div class="projects-list">
 
+      <div class="project-row project-row-reverse d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
+        <div class="project-row-media">
+          <img src="images/fmri.jpg" alt="fMRI brain activity visualization" class="project-image">
+        </div>
+        <div class="project-row-content">
+          <span class="project-label">Neuroscience · NLP</span>
+          <h3 class="project-title">Language to Brain Signal Analysis</h3>
+          <p>Compared word-embedding strategies against fMRI brain activity recorded while subjects listened to natural speech, to identify which linguistic representations the brain actually computes. Contextual BERT embeddings predicted neural response better than static embeddings, grounding modern language models in real brain data.</p>
+          <ul class="project-highlights">
+            <li>Evaluated a progression of embeddings (Bag-of-Words, Word2Vec, GloVe, a custom BERT-style encoder, pretrained BERT) against voxel-wise fMRI BOLD signals using ridge regression.</li>
+            <li>Trained a custom encoder from scratch with masked language modeling and Optuna hyperparameter tuning, then adapted a pretrained BERT to narrative text with LoRA fine-tuning.</li>
+            <li>Validated findings across two subjects and used SHAP/LIME to identify which words drove predictions in the best-predicted brain regions.</li>
+          </ul>
+          <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
+          <p class="project-meta mb-3"><strong>Frameworks:</strong> PyTorch, Hugging Face Transformers, LoRA/PEFT, scikit-learn, SHAP, LIME, Optuna</p>
+          <a href="https://github.com/Sgipn/Language_to_Brain_Encoding" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
+      </div>
+
       <div class="project-row d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
         <div class="project-row-media">
           <img src="images/text_to_SQL.png" alt="Text-to-SQL agent chart output" class="project-image project-image-native">
@@ -168,7 +187,7 @@
         </div>
         <div class="project-row-content">
           <span class="project-label">Optimization · Fraud Detection</span>
-          <h3 class="project-title">Bayesian Optimization for LightGBM Credit Fraud Detection</h3>
+          <h3 class="project-title">Efficient Hyperparameter Tuning Using Bayesian Optimization for Credit Fraud Detection Applications</h3>
           <p>Applied Gaussian Process-based Bayesian Optimization to tune LightGBM for imbalanced fraud detection, validated on classic benchmark functions before deployment. Reached stronger Average Precision with far fewer model evaluations than a grid search would need.</p>
           <ul class="project-highlights">
             <li>Implemented a GP surrogate with a Matérn kernel and compared Expected Improvement vs. Lower Confidence Bound acquisition functions for sample-efficient search.</li>
@@ -205,7 +224,7 @@
         </div>
         <div class="project-row-content">
           <span class="project-label">Geospatial Analysis</span>
-          <h3 class="project-title">Geospatial Satellite Imagery and Cloud-Detection Analysis</h3>
+          <h3 class="project-title">Polar Cloud Detection using Geospatial Satellite Imagery</h3>
           <p>Combined convolutional autoencoders with tree-based ensembles to classify cloud cover and terrain from satellite imagery. Spatial block cross-validation kept predictions robust against geographic data leakage.</p>
           <ul class="project-highlights">
             <li>Built custom convolutional autoencoders and LightGBM ensembles on MISR imagery.</li>
@@ -223,37 +242,20 @@
           <img src="images/co2.jpg" alt="CO2 emissions data" class="project-image">
         </div>
         <div class="project-row-content">
-          <span class="project-label">Streaming · Kafka / Airflow</span>
+          <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+            <span class="project-label mb-0">Streaming · Kafka / Airflow</span>
+            <span class="badge project-status-badge">In Progress</span>
+          </div>
           <h3 class="project-title">Streaming Pipeline for Emissions Forecasting</h3>
           <p>Extended the CA Industrial Emissions work into a streaming ingestion and orchestration pipeline with Kafka and Airflow. Automated health checks and replay logic keep daily emissions scoring resilient enough for operational decisions.</p>
+          <p class="project-status mb-2"><strong>Status:</strong> This project is actively in development and not yet feature-complete.</p>
           <ul class="project-highlights">
             <li>Built an event-driven layer to ingest sensor and regulatory data into a daily scoring pipeline.</li>
             <li>Designed automatic health checks and replay logic for resilient production delivery.</li>
             <li>Enabled fast operational decisions with a live stream pipeline and observability hooks.</li>
           </ul>
-          <p class="project-status mb-1"><strong>Status:</strong> In Progress</p>
           <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
-          <p class="project-meta mb-3"><strong>Frameworks:</strong> Apache Kafka, Apache Airflow</p>
-          <a href="https://github.com/Sgipn/Streaming_Pipeline_for_Emissions_Forecasting" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-        </div>
-      </div>
-
-      <div class="project-row project-row-reverse d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
-        <div class="project-row-media">
-          <img src="images/fmri.jpg" alt="fMRI brain activity visualization" class="project-image">
-        </div>
-        <div class="project-row-content">
-          <span class="project-label">Neuroscience · NLP</span>
-          <h3 class="project-title">Language to Brain Signal Analysis</h3>
-          <p>Compared word-embedding strategies against fMRI brain activity recorded while subjects listened to natural speech, to identify which linguistic representations the brain actually computes. Contextual BERT embeddings predicted neural response better than static embeddings, grounding modern language models in real brain data.</p>
-          <ul class="project-highlights">
-            <li>Evaluated a progression of embeddings (Bag-of-Words, Word2Vec, GloVe, a custom BERT-style encoder, pretrained BERT) against voxel-wise fMRI BOLD signals using ridge regression.</li>
-            <li>Trained a custom encoder from scratch with masked language modeling and Optuna hyperparameter tuning, then adapted a pretrained BERT to narrative text with LoRA fine-tuning.</li>
-            <li>Validated findings across two subjects and used SHAP/LIME to identify which words drove predictions in the best-predicted brain regions.</li>
-          </ul>
-          <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
-          <p class="project-meta mb-3"><strong>Frameworks:</strong> PyTorch, Hugging Face Transformers, LoRA/PEFT, scikit-learn, SHAP, LIME, Optuna</p>
-          <a href="https://github.com/Sgipn/Language_to_Brain_Encoding" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          <p class="project-meta mb-0"><strong>Frameworks:</strong> Apache Kafka, Apache Airflow</p>
         </div>
       </div>
 
