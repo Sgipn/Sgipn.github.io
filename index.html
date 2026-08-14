@@ -33,7 +33,6 @@
       <img src="images/KX.jpg" alt="Kevin Xu" class="avatar-img mx-auto my-4">
       <p class="hero-copy mx-auto">Welcome. Feel free to explore my work and get in touch!</p>
       <div class="hero-actions mt-4">
-        <a href="#education" class="btn btn-outline-light btn-lg mx-2">Education</a>
         <a href="docs/KevinXu_Resume_DS_8_14.pdf" class="btn btn-primary btn-lg mx-2">Download Resume</a>
       </div>
       <p class="hero-note mt-4">San Francisco, CA · kxu9787@gmail.com · 530-601-3082</p>
@@ -43,7 +42,7 @@
         <a href="mailto:kxu9787@gmail.com" title="Email"><i class="fa-solid fa-envelope fa-lg"></i></a>
       </div>
       <div class="hero-about mx-auto mt-5">
-        <p>Data Scientist and Engineer with experience architecting and maintaining production PySpark and SQL ETL/ELT pipelines across AWS Glue, Databricks, and S3 data lakes (~2TB). Proven track record of reducing calculation runtimes from weeks to minutes, implementing pipeline observability via AWS Step Function, and supporting downstream data science teams.</p>
+        <p>AI and Data Engineer with experience architecting high-throughput PySpark/SQL data pipelines, production LLM agent architectures, and PEFT/LoRA fine-tuning workflows. Skilled in bridging cloud infrastructure with statistical modeling to design pre-warehouse validation layers, latent embedding search, and anomaly detection systems, taking systems from MVP design to high-availability deployment for federal portfolios and large-scale data applications.</p>
         <p>Masters degree in Statistics from UC Berkeley, where I focused on machine learning, time-series analysis, and bayesian analysis.</p>
         <p>Beyond my professional pursuits, I enjoy backpacking, chess, traveling, and listening to classic rock. Check out some pictures from my travels! </p>
         <div class="travel-slideshow reveal">
@@ -121,37 +120,18 @@
           <img src="images/logo-deloitte.png" alt="Deloitte logo" class="experience-logo">
         </div>
         <div class="experience-content flex-grow-1">
-          <h5>Consultant (Data Engineering)</h5>
+          <h5>Consultant (Data Science)</h5>
           <p class="experience-subtitle mb-0"><em>Deloitte, San Francisco</em></p>
           <p class="experience-date mb-3">Aug 2022 – Apr 2025</p>
-          <div class="experience-subgroup">
-            <div class="experience-subgroup-header d-flex flex-wrap align-items-center gap-2 mb-2">
-              <span class="badge bg-secondary">FIAR Engagement</span>
-              <span class="experience-subgroup-dates">Apr 2023 – Apr 2025</span>
-            </div>
-            <p class="experience-intro">Supported a Department of Defense (DoD) Financial Improvement and Audit Remediation (FIAR) engagement, <strong>building the data pipelines and calculation logic behind a $12.2B Air Force military equipment portfolio</strong>.</p>
-            <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
-            <ul hidden>
-              <li>Architected two high-throughput ELT pipelines feeding a ~1–2 TB S3 data lake: a SQL-based pipeline (AWS Glue, Databricks, PySpark, Parquet) ingesting millions of monthly transaction records across <strong>80+ major military programs</strong> (e.g., F-35 fleet enhancements), and an API-based tool automating progress-report intake across 10+ programs. Re-engineered both from ad hoc notebooks into modular, version-controlled production components.</li>
-              <li>Cut quarterly equipment calculation runtimes from weeks of manual processing to <strong>under 10 minutes</strong> by migrating the SQL pipeline into production AWS Glue/Databricks ELT jobs.</li>
-              <li>Standardized the calculation logic behind a core metric for the team's <strong>Construction-In-Progress (CIP) deliverable</strong>, keeping definitions consistent across the team as underlying business rules evolved.</li>
-              <li>Built <strong>automated pipeline health alerting and data-quality checks</strong> with AWS Step Functions, feeding Tableau and Power BI dashboards for quarterly client deliverables and internal stakeholder reporting.</li>
-              <li>Wrote data-integrity checks reconciling the team's automated deliverable against a legacy manual (Excel-based) process at the transaction level; authored the reconciliation logic and <strong>traced a significant unaccounted variance</strong>.</li>
-              <li>Owned technical documentation (SOPs, schemas, data dictionaries) to standardize pipeline logic across the team, using Deloitte's internal ChatGPT-based LLM tool to accelerate drafting and debugging; <strong>mentored junior data scientists as the team scaled from 4 to 8</strong> and the program expanded to Space Force.</li>
-            </ul>
-          </div>
-          <div class="experience-subgroup">
-            <div class="experience-subgroup-header d-flex flex-wrap align-items-center gap-2 mb-2">
-              <span class="badge bg-secondary">SEMOSS / Army Engagement</span>
-              <span class="experience-subgroup-dates">Sep 2022 – Apr 2023</span>
-            </div>
-            <p class="experience-intro">Supported a data-governance engagement for the U.S. Army on Deloitte's SEMOSS platform, building dashboards and analysis to help identify and sunset redundant Army policies.</p>
-            <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
-            <ul hidden>
-              <li>Built graph-based clustering logic organizing <strong>thousands of Army policies</strong> into a multi-level taxonomy (standards, clusters, systems) to identify redundant, sunset-able policies; visualized findings through interactive SEMOSS dashboards presented quarterly, giving Army leadership line of sight into policy redundancy.</li>
-              <li>Built additional dashboards using SEMOSS, Python, SQL, and HTML, including an <strong>enterprise health grid</strong> tracking status and redundancy counts across the policy taxonomy's systems, hosted on AWS infrastructure.</li>
-            </ul>
-          </div>
+          <p class="experience-intro">Owned anomaly detection, data lineage, and high-throughput reconciliation systems for a <strong>$12.2B Department of Defense financial portfolio</strong>, taking each system from MVP design to high-availability deployment under strict external audit constraints.</p>
+          <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
+          <ul hidden>
+            <li>Designed and owned a rule-based anomaly detection engine automating pattern recognition for valuation mismatches, duplicate records, and cross-system breaks; <strong>surfaced ~$22M in recoverable assets</strong>, iteratively feeding audit findings back into detection logic.</li>
+            <li>Re-engineered 8+ legacy reconciliation workflows into modular PySpark/Databricks pipelines with explicit schema contracts and execution gates, <strong>reducing processing latency from hours to minutes (~80% runtime reduction)</strong> under strict EY audit constraints.</li>
+            <li>Architected batch ingestion pipelines consolidating multi-source data streams into a unified AWS S3 data lake, building <strong>pre-warehouse validation layers, schema enforcement, and threshold-based quality gates</strong> to prevent corrupted data from propagating downstream.</li>
+            <li>Engineered a full-graph data lineage framework tagging records with transformation histories and validation outcomes, <strong>ensuring pipeline transparency for external audit compliance</strong>.</li>
+            <li>Authored system-level technical documentation, built real-time portfolio health dashboards, and <strong>mentored 4 junior data scientists</strong> on production workflows and pipeline reliability.</li>
+          </ul>
         </div>
       </div>
     </article>
@@ -186,12 +166,13 @@
         <div class="project-row-content">
           <span class="project-label">Neuroscience · NLP</span>
           <h3 class="project-title">Language to Brain Signal Analysis</h3>
-          <p>Understanding how the brain represents language could inform brain-computer interfaces and reveal whether today's AI language models actually mirror human cognition. Compared word-embedding strategies against fMRI brain activity recorded while subjects listened to natural speech, to identify which linguistic representations the brain actually computes. Contextual BERT embeddings predicted neural response better than static embeddings, grounding modern language models in real brain data.</p>
+          <p>Understanding how the brain represents language could inform brain-computer interfaces and reveal whether today's AI language models actually mirror human cognition. Built a voxel-wise ridge regression pipeline across ~190K voxels (2 subjects, 101 stories) comparing six embedding strategies: static and custom-trained embeddings carried near-zero signal (mean correlation ≈ 0.01), while pretrained BERT embeddings improved correlation by ~80%.</p>
           <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
           <ul class="project-highlights" hidden>
-            <li>Evaluated a progression of embeddings (Bag-of-Words, Word2Vec, GloVe, a custom BERT-style encoder, pretrained BERT) against voxel-wise fMRI BOLD signals using ridge regression.</li>
-            <li>Trained a custom encoder from scratch with masked language modeling and Optuna hyperparameter tuning, then adapted a pretrained BERT to narrative text with LoRA fine-tuning.</li>
-            <li>Validated findings across two subjects and used SHAP/LIME to identify which words drove predictions in the best-predicted brain regions.</li>
+            <li>Designed a 6-way comparative study (Bag-of-Words, Word2Vec, GloVe, a custom-trained BERT-style encoder, pretrained BERT, and a LoRA fine-tuned BERT) to identify which representation best predicts brain activity during natural story listening.</li>
+            <li>Ran per-voxel grid search and cross-validation across ~190K voxels; static and custom embeddings carried near-zero signal (mean CC ≈ 0.01) while pretrained BERT gave ~+80% in correlation.</li>
+            <li>Fine-tuned bert-base-uncased with PEFT/LoRA in PyTorch (Optuna hyperparameter search), finding only marginal, inconsistent gains over the base pretrained model.</li>
+            <li>Applied SHAP and LIME to the best-predicted voxels to surface interpretable word-level drivers of brain activation.</li>
           </ul>
           <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
           <p class="project-meta mb-3"><strong>Frameworks:</strong> PyTorch, Hugging Face Transformers, LoRA/PEFT, scikit-learn, SHAP, LIME, Optuna</p>
@@ -209,12 +190,14 @@
           <p>SQL fluency shouldn't be a prerequisite for getting answers from data, yet it remains the biggest bottleneck between a business question and a business insight. Converts plain-English business questions into validated SQL, letting stakeholders self-serve revenue and churn metrics without waiting on an analyst. Two independent safety layers keep every generated query read-only and schema-approved.</p>
           <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
           <ul class="project-highlights" hidden>
+            <li>Engineered an end-to-end agentic Text-to-SQL system using LangChain and LLM reasoning workflows to convert natural-language queries into executable, optimized SQL.</li>
             <li>Enforced two-layer safety: AST parsing via sqlglot restricts queries to SELECT-only on approved views, backed by read-only DuckDB execution as a failsafe.</li>
+            <li>Implemented automated error-handling and self-correction loops so invalid or failing SQL is automatically retried and repaired before being surfaced to the user.</li>
             <li>Computed ratio metrics like ARM and churn rate dynamically using Delta Method confidence intervals validated through Monte Carlo simulation.</li>
             <li>Used ChromaDB semantic retrieval over approved metric/schema definitions so the agent declines undefined-metric questions instead of hallucinating.</li>
           </ul>
           <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
-          <p class="project-meta mb-3"><strong>Frameworks:</strong> DuckDB, dbt / MetricFlow, ChromaDB, sqlglot, Anthropic Claude API</p>
+          <p class="project-meta mb-3"><strong>Frameworks:</strong> LangChain, DuckDB, dbt / MetricFlow, ChromaDB, sqlglot, Anthropic Claude API</p>
           <div class="d-flex flex-wrap gap-2">
             <a href="https://github.com/Sgipn/Text_to_SQL_Agent_for_Revenue_and_Churn_Analytics" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
             <a href="https://semantic-metric-repository.onrender.com/" class="btn btn-live-demo" target="_blank" rel="noopener noreferrer">Live Demo</a>
@@ -269,15 +252,15 @@
         <div class="project-row-content">
           <span class="project-label">Geospatial Analysis</span>
           <h3 class="project-title">Polar Cloud Detection using Geospatial Satellite Imagery</h3>
-          <p>Cloud cover distorts nearly every satellite-based climate measurement, and polar regions are especially hard to get right since snow and ice visually mimic clouds. Combined convolutional autoencoders with tree-based ensembles to classify cloud cover and terrain from satellite imagery. Spatial block cross-validation kept predictions robust against geographic data leakage.</p>
+          <p>Cloud cover distorts nearly every satellite-based climate measurement, and polar regions are especially hard to get right since snow and ice visually mimic clouds. Pre-trained multi-layer neural network autoencoders on unlabeled multi-angle MISR imagery to extract 40-dimensional latent embeddings, then classified cloud cover and terrain with tree-based ensembles, reaching <strong>98.74% classification accuracy</strong>.</p>
           <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
           <ul class="project-highlights" hidden>
-            <li>Built custom convolutional autoencoders and LightGBM ensembles on MISR imagery.</li>
-            <li>Designed spatial block cross-validation to prevent geographic data leakage.</li>
-            <li>Tested boundary degradation and noise propagation to ensure robust spatial predictions.</li>
+            <li>Pre-trained multi-layer neural network autoencoders via transfer learning on unlabeled multi-angle satellite imagery, extracting 40-dimensional latent embeddings across spatial 3x3 to 9x9 neighbor windows.</li>
+            <li>Trained LightGBM, Random Forest, and k-NN models on the resulting multi-angular spatial features, achieving 98.74% classification accuracy on complex, unstructured imagery.</li>
+            <li>Ran quadrant-based spatial cross-validation and perturbation/noise-injection stress testing to evaluate model stability and out-of-distribution generalization.</li>
           </ul>
           <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
-          <p class="project-meta mb-0"><strong>Frameworks:</strong> TensorFlow / Keras, LightGBM</p>
+          <p class="project-meta mb-0"><strong>Frameworks:</strong> TensorFlow / Keras, scikit-learn, LightGBM</p>
         </div>
       </div>
 
@@ -325,9 +308,57 @@
             <span class="skill-chip">Redshift</span>
             <span class="skill-chip">Sagemaker</span>
             <span class="skill-chip">dbt</span>
+            <span class="skill-chip">DuckDB</span>
             <span class="skill-chip">Parquet</span>
             <span class="skill-chip">MLflow</span>
+            <span class="skill-chip">Distributed Systems</span>
+            <span class="skill-chip">Pre-Warehouse Validation</span>
+            <span class="skill-chip">Schema Enforcement & Deduplication</span>
+            <span class="skill-chip">Docker</span>
+            <span class="skill-chip">FastAPI</span>
+            <span class="skill-chip">RESTful APIs & Webhooks</span>
+            <span class="skill-chip">Pipeline Profiling & Alerting</span>
+            <span class="skill-chip">Jupyter</span>
             <span class="skill-chip">Git</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="skill-card p-4 shadow-sm reveal">
+          <h5><i class="fa-solid fa-robot me-2 item-icon" aria-hidden="true"></i>AI / LLM Systems</h5>
+          <div class="skill-list mt-3">
+            <span class="skill-chip">LLM Agent Development</span>
+            <span class="skill-chip">LangChain</span>
+            <span class="skill-chip">Anthropic Claude API</span>
+            <span class="skill-chip">RAG (ChromaDB)</span>
+            <span class="skill-chip">Prompt Engineering</span>
+            <span class="skill-chip">SQL AST Validation (sqlglot)</span>
+            <span class="skill-chip">Human-in-the-Loop Evaluation</span>
+            <span class="skill-chip">Hugging Face Transformers</span>
+            <span class="skill-chip">PyTorch</span>
+            <span class="skill-chip">LoRA / PEFT Fine-Tuning</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="skill-card p-4 shadow-sm reveal">
+          <h5><i class="fa-solid fa-flask me-2 item-icon" aria-hidden="true"></i>Machine Learning & Statistics</h5>
+          <div class="skill-list mt-3">
+            <span class="skill-chip">XGBoost</span>
+            <span class="skill-chip">LightGBM</span>
+            <span class="skill-chip">Random Forest / k-NN</span>
+            <span class="skill-chip">Gaussian Processes</span>
+            <span class="skill-chip">Bayesian Optimization</span>
+            <span class="skill-chip">scikit-learn</span>
+            <span class="skill-chip">TensorFlow / Keras</span>
+            <span class="skill-chip">Pandas / NumPy</span>
+            <span class="skill-chip">Statsmodels</span>
+            <span class="skill-chip">SHAP / LIME</span>
+            <span class="skill-chip">Optuna</span>
+            <span class="skill-chip">Anomaly Detection</span>
+            <span class="skill-chip">Spatial Cross-Validation</span>
+            <span class="skill-chip">Regression Analysis</span>
+            <span class="skill-chip">Time Series Forecasting (SARIMA)</span>
           </div>
         </div>
       </div>
@@ -336,7 +367,7 @@
           <h5><i class="fa-solid fa-code me-2 item-icon" aria-hidden="true"></i>Languages</h5>
           <div class="skill-list mt-3">
             <span class="skill-chip">Python</span>
-            <span class="skill-chip">SQL</span>
+            <span class="skill-chip">SQL (MySQL, T-SQL)</span>
             <span class="skill-chip">R</span>
             <span class="skill-chip">Bash</span>
           </div>
@@ -353,7 +384,6 @@
             <span class="skill-chip">Feature Engineering</span>
             <span class="skill-chip">Reconciliation</span>
             <span class="skill-chip">Variance Analysis</span>
-            <span class="skill-chip">Time Series Forecasting</span>
           </div>
         </div>
       </div>

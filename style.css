@@ -370,25 +370,6 @@ main {
   margin-bottom: 0;
 }
 
-.experience-subgroup + .experience-subgroup {
-  margin-top: 1.75rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.10);
-}
-
-.experience-subgroup-header .badge {
-  background-color: rgba(59, 130, 246, 0.18) !important;
-  color: #a5b4fc;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  padding: 0.4rem 0.75rem;
-}
-
-.experience-subgroup-dates {
-  color: #94a3b8;
-  font-size: 0.85rem;
-}
-
 .experience-content strong {
   color: #f4f7ff;
 }
