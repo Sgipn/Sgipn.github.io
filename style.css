@@ -1,5 +1,11 @@
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+main > section {
+  scroll-snap-align: start;
+  scroll-margin-top: 6rem;
 }
 
 * {
@@ -32,7 +38,21 @@ main {
   max-width: 1280px;
 }
 
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #38bdf8, #a78bfa, #f472b6);
+  z-index: 60;
+  transition: width 120ms ease-out;
+}
+
 .navbar-card {
+  position: sticky;
+  top: 0.75rem;
+  z-index: 40;
   max-width: 960px;
   margin: 0 auto;
   padding: 1.2rem 1.4rem;
@@ -40,9 +60,17 @@ main {
   background: rgba(15, 23, 42, 0.86);
   border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(14px);
+  transition: padding 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+}
+
+.navbar-card--scrolled {
+  padding: 0.75rem 1.4rem;
+  background: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
 }
 
 .nav-link {
+  position: relative;
   color: #dbeafe !important;
   font-weight: 600;
   transition: color 180ms ease, transform 180ms ease;
@@ -51,6 +79,24 @@ main {
 .nav-link:hover {
   color: #93c5fd !important;
   transform: translateY(-1px);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: #7dd3fc;
+  transform: translateX(-50%);
+  transition: width 220ms ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 70%;
 }
 
 .welcome-container {
@@ -67,7 +113,27 @@ main {
   margin: 0 auto;
   border: 6px solid rgba(255, 255, 255, 0.14);
   box-shadow: 0 24px 60px rgba(15, 23, 42, 0.35);
-  animation: floatImage 8s ease-in-out infinite;
+  animation: floatImage 8s ease-in-out infinite, imgFadeIn 600ms ease both;
+}
+
+@keyframes imgFadeIn {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar-img,
+  .project-image,
+  .education-image,
+  .experience-logo {
+    animation: none !important;
+  }
 }
 
 .card {
@@ -257,6 +323,20 @@ main {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.experience-card,
+.skill-card,
+.education-card {
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.experience-card:hover,
+.skill-card:hover,
+.education-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.28);
+  border-color: rgba(125, 211, 252, 0.32);
+}
+
 .experience-card ul,
 .experience-card p {
   color: #cbd5e1;
@@ -313,15 +393,6 @@ main {
   color: #f4f7ff;
 }
 
-.experience-media-compact {
-  max-width: 220px;
-}
-
-.experience-media-compact .experience-logo {
-  height: 140px;
-  padding: 1.25rem;
-}
-
 .experience-badge,
 .project-label {
   color: #a5b4fc;
@@ -362,7 +433,7 @@ main {
 
 @media (min-width: 992px) {
   .project-row-reverse {
-    flex-direction: row-reverse;
+    flex-direction: row-reverse !important;
   }
 }
 
@@ -395,6 +466,7 @@ main {
   padding: 1rem;
   box-sizing: border-box;
   transition: transform 220ms ease, box-shadow 220ms ease;
+  animation: imgFadeIn 600ms ease both;
 }
 
 .project-row:hover .project-image {
@@ -472,6 +544,7 @@ main {
   border-radius: 28px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.28);
+  animation: imgFadeIn 600ms ease both;
 }
 
 .experience-media {
@@ -501,6 +574,7 @@ main {
   background: rgba(248, 250, 252, 0.96);
   padding: 1.75rem;
   box-sizing: border-box;
+  animation: imgFadeIn 600ms ease both;
 }
 
 .school-photo {
@@ -581,6 +655,111 @@ main {
   font-size: 0.95rem;
 }
 
+.travel-slideshow {
+  max-width: 420px;
+  margin: 1.75rem auto 0;
+}
+
+.travel-slide-viewport {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.28);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.travel-slide-viewport:focus-visible {
+  outline: 2px solid #7dd3fc;
+  outline-offset: 3px;
+}
+
+.travel-slide {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 420ms ease;
+  pointer-events: none;
+}
+
+.travel-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.travel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.6);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: background-color 180ms ease, transform 180ms ease;
+  z-index: 2;
+}
+
+.travel-nav-btn:hover {
+  background: rgba(59, 130, 246, 0.85);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.travel-prev {
+  left: 1rem;
+}
+
+.travel-next {
+  right: 1rem;
+}
+
+.travel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+
+.travel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.24);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.travel-dot:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.travel-dot.is-active {
+  background: #7dd3fc;
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .travel-slide-viewport {
+    height: 260px;
+  }
+}
+
 .btn-outline-light {
   border-color: rgba(255, 255, 255, 0.22);
   color: #e2e8f0;
@@ -642,6 +821,25 @@ footer p {
   .avatar-img {
     width: 180px;
     height: 180px;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 
