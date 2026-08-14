@@ -146,7 +146,7 @@
         <div class="project-row-content">
           <span class="project-label">Neuroscience · NLP</span>
           <h3 class="project-title">Language to Brain Signal Analysis</h3>
-          <p>Compared word-embedding strategies against fMRI brain activity recorded while subjects listened to natural speech, to identify which linguistic representations the brain actually computes. Contextual BERT embeddings predicted neural response better than static embeddings, grounding modern language models in real brain data.</p>
+          <p>Understanding how the brain represents language could inform brain-computer interfaces and reveal whether today's AI language models actually mirror human cognition. Compared word-embedding strategies against fMRI brain activity recorded while subjects listened to natural speech, to identify which linguistic representations the brain actually computes. Contextual BERT embeddings predicted neural response better than static embeddings, grounding modern language models in real brain data.</p>
           <ul class="project-highlights">
             <li>Evaluated a progression of embeddings (Bag-of-Words, Word2Vec, GloVe, a custom BERT-style encoder, pretrained BERT) against voxel-wise fMRI BOLD signals using ridge regression.</li>
             <li>Trained a custom encoder from scratch with masked language modeling and Optuna hyperparameter tuning, then adapted a pretrained BERT to narrative text with LoRA fine-tuning.</li>
@@ -165,7 +165,7 @@
         <div class="project-row-content">
           <span class="project-label">AI Agent · Text-to-SQL</span>
           <h3 class="project-title">Text-to-SQL Agent for Revenue and Churn Analytics</h3>
-          <p>Converts plain-English business questions into validated SQL, letting stakeholders self-serve revenue and churn metrics without waiting on an analyst. Two independent safety layers keep every generated query read-only and schema-approved.</p>
+          <p>SQL fluency shouldn't be a prerequisite for getting answers from data, yet it remains the biggest bottleneck between a business question and a business insight. Converts plain-English business questions into validated SQL, letting stakeholders self-serve revenue and churn metrics without waiting on an analyst. Two independent safety layers keep every generated query read-only and schema-approved.</p>
           <ul class="project-highlights">
             <li>Enforced two-layer safety: AST parsing via sqlglot restricts queries to SELECT-only on approved views, backed by read-only DuckDB execution as a failsafe.</li>
             <li>Computed ratio metrics like ARM and churn rate dynamically using Delta Method confidence intervals validated through Monte Carlo simulation.</li>
@@ -188,7 +188,7 @@
         <div class="project-row-content">
           <span class="project-label">Optimization · Fraud Detection</span>
           <h3 class="project-title">Efficient Hyperparameter Tuning Using Bayesian Optimization for Credit Fraud Detection Applications</h3>
-          <p>Applied Gaussian Process-based Bayesian Optimization to tune LightGBM for imbalanced fraud detection, validated on classic benchmark functions before deployment. Reached stronger Average Precision with far fewer model evaluations than a grid search would need.</p>
+          <p>Fraud detection models are notoriously expensive to tune, and every wasted hyperparameter search delays catching fraud that costs real money. Applied Gaussian Process-based Bayesian Optimization to tune LightGBM for imbalanced fraud detection, validated on classic benchmark functions before deployment. Reached stronger Average Precision with far fewer model evaluations than a grid search would need.</p>
           <ul class="project-highlights">
             <li>Implemented a GP surrogate with a Matérn kernel and compared Expected Improvement vs. Lower Confidence Bound acquisition functions for sample-efficient search.</li>
             <li>Validated convergence behavior on benchmark functions (Branin, Hartmann-3) before applying the same pipeline to the IEEE-CIS fraud dataset.</li>
@@ -207,7 +207,7 @@
         <div class="project-row-content">
           <span class="project-label">Risk Modeling</span>
           <h3 class="project-title">Feature Cost vs Signal in Credit Risk Prediction</h3>
-          <p>Built cost-sensitive classification models to evaluate credit risk under asymmetric loss and real data-collection cost. A parsimonious 2-variable model matched full-ensemble performance, cutting the pipeline's operational cost.</p>
+          <p>In production, every extra feature carries a real collection cost, so knowing when a simpler model is "good enough" matters as much as squeezing out marginal accuracy. Built cost-sensitive classification models to evaluate credit risk under asymmetric loss and real data-collection cost. A parsimonious 2-variable model matched full-ensemble performance, cutting the pipeline's operational cost.</p>
           <ul class="project-highlights">
             <li>Built XGBoost and LightGBM models under a 5:1 false-negative penalty.</li>
             <li>Reduced multicollinearity with VIF analysis to show a parsimonious 2-variable model with comparable performance.</li>
@@ -225,15 +225,14 @@
         <div class="project-row-content">
           <span class="project-label">Geospatial Analysis</span>
           <h3 class="project-title">Polar Cloud Detection using Geospatial Satellite Imagery</h3>
-          <p>Combined convolutional autoencoders with tree-based ensembles to classify cloud cover and terrain from satellite imagery. Spatial block cross-validation kept predictions robust against geographic data leakage.</p>
+          <p>Cloud cover distorts nearly every satellite-based climate measurement, and polar regions are especially hard to get right since snow and ice visually mimic clouds. Combined convolutional autoencoders with tree-based ensembles to classify cloud cover and terrain from satellite imagery. Spatial block cross-validation kept predictions robust against geographic data leakage.</p>
           <ul class="project-highlights">
             <li>Built custom convolutional autoencoders and LightGBM ensembles on MISR imagery.</li>
             <li>Designed spatial block cross-validation to prevent geographic data leakage.</li>
             <li>Tested boundary degradation and noise propagation to ensure robust spatial predictions.</li>
           </ul>
           <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
-          <p class="project-meta mb-3"><strong>Frameworks:</strong> TensorFlow / Keras, LightGBM</p>
-          <a href="https://github.com/Sgipn/Geospatial_Satellite_Imagery_Cloud_Detection" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          <p class="project-meta mb-0"><strong>Frameworks:</strong> TensorFlow / Keras, LightGBM</p>
         </div>
       </div>
 
@@ -247,7 +246,7 @@
             <span class="badge project-status-badge">In Progress</span>
           </div>
           <h3 class="project-title">Streaming Pipeline for Emissions Forecasting</h3>
-          <p>Extended the CA Industrial Emissions work into a streaming ingestion and orchestration pipeline with Kafka and Airflow. Automated health checks and replay logic keep daily emissions scoring resilient enough for operational decisions.</p>
+          <p>Emissions data loses much of its value when it's only available in batch, since regulators and operators need to react to spikes as they happen, not days later. Extended the CA Industrial Emissions work into a streaming ingestion and orchestration pipeline with Kafka and Airflow. Automated health checks and replay logic keep daily emissions scoring resilient enough for operational decisions.</p>
           <p class="project-status mb-2"><strong>Status:</strong> This project is actively in development and not yet feature-complete.</p>
           <ul class="project-highlights">
             <li>Built an event-driven layer to ingest sensor and regulatory data into a daily scoring pipeline.</li>
