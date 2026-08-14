@@ -161,27 +161,6 @@
 
       <div class="project-row reveal d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
         <div class="project-row-media">
-          <img src="images/fmri.jpg" alt="fMRI brain activity visualization" class="project-image">
-        </div>
-        <div class="project-row-content">
-          <span class="project-label">Neuroscience · NLP</span>
-          <h3 class="project-title">Language to Brain Signal Analysis</h3>
-          <p>Understanding how the brain represents language could inform brain-computer interfaces and reveal whether today's AI language models actually mirror human cognition. Built a voxel-wise ridge regression pipeline across ~190K voxels (2 subjects, 101 stories) comparing six embedding strategies: static and custom-trained embeddings carried near-zero signal (mean correlation ≈ 0.01), while pretrained BERT embeddings improved correlation by ~80%.</p>
-          <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
-          <ul class="project-highlights" hidden>
-            <li>Designed a 6-way comparative study (Bag-of-Words, Word2Vec, GloVe, a custom-trained BERT-style encoder, pretrained BERT, and a LoRA fine-tuned BERT) to identify which representation best predicts brain activity during natural story listening.</li>
-            <li>Ran per-voxel grid search and cross-validation across ~190K voxels; static and custom embeddings carried near-zero signal (mean CC ≈ 0.01) while pretrained BERT gave ~+80% in correlation.</li>
-            <li>Fine-tuned bert-base-uncased with PEFT/LoRA in PyTorch (Optuna hyperparameter search), finding only marginal, inconsistent gains over the base pretrained model.</li>
-            <li>Applied SHAP and LIME to the best-predicted voxels to surface interpretable word-level drivers of brain activation.</li>
-          </ul>
-          <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
-          <p class="project-meta mb-3"><strong>Frameworks:</strong> PyTorch, Hugging Face Transformers, LoRA/PEFT, scikit-learn, SHAP, LIME, Optuna</p>
-          <a href="https://github.com/Sgipn/Language_to_Brain_Encoding" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-        </div>
-      </div>
-
-      <div class="project-row project-row-reverse reveal d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
-        <div class="project-row-media">
           <img src="images/text_to_SQL.png" alt="Text-to-SQL agent chart output" class="project-image project-image-native">
         </div>
         <div class="project-row-content">
@@ -203,6 +182,27 @@
             <a href="https://semantic-metric-repository.onrender.com/" class="btn btn-live-demo" target="_blank" rel="noopener noreferrer">Live Demo</a>
           </div>
           <p class="project-note mt-2 mb-0">Hosted on a free tier so the demo may take ~30s to wake up on first load.</p>
+        </div>
+      </div>
+
+      <div class="project-row project-row-reverse reveal d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
+        <div class="project-row-media">
+          <img src="images/fmri.jpg" alt="fMRI brain activity visualization" class="project-image">
+        </div>
+        <div class="project-row-content">
+          <span class="project-label">Neuroscience · NLP</span>
+          <h3 class="project-title">Language to Brain Signal Analysis</h3>
+          <p>Understanding how the brain represents language could inform brain-computer interfaces and reveal whether today's AI language models actually mirror human cognition. Built a voxel-wise ridge regression pipeline across ~190K voxels (2 subjects, 101 stories) comparing six embedding strategies: static and custom-trained embeddings carried near-zero signal (mean correlation ≈ 0.01), while pretrained BERT embeddings improved correlation by ~80%.</p>
+          <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
+          <ul class="project-highlights" hidden>
+            <li>Designed a 6-way comparative study (Bag-of-Words, Word2Vec, GloVe, a custom-trained BERT-style encoder, pretrained BERT, and a LoRA fine-tuned BERT) to identify which representation best predicts brain activity during natural story listening.</li>
+            <li>Ran per-voxel grid search and cross-validation across ~190K voxels; static and custom embeddings carried near-zero signal (mean CC ≈ 0.01) while pretrained BERT gave ~+80% in correlation.</li>
+            <li>Fine-tuned bert-base-uncased with PEFT/LoRA in PyTorch (Optuna hyperparameter search), finding only marginal, inconsistent gains over the base pretrained model.</li>
+            <li>Applied SHAP and LIME to the best-predicted voxels to surface interpretable word-level drivers of brain activation.</li>
+          </ul>
+          <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
+          <p class="project-meta mb-3"><strong>Frameworks:</strong> PyTorch, Hugging Face Transformers, LoRA/PEFT, scikit-learn, SHAP, LIME, Optuna</p>
+          <a href="https://github.com/Sgipn/Language_to_Brain_Encoding" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
         </div>
       </div>
 
@@ -252,7 +252,7 @@
         <div class="project-row-content">
           <span class="project-label">Geospatial Analysis</span>
           <h3 class="project-title">Polar Cloud Detection using Geospatial Satellite Imagery</h3>
-          <p>Cloud cover distorts nearly every satellite-based climate measurement, and polar regions are especially hard to get right since snow and ice visually mimic clouds. Pre-trained multi-layer neural network autoencoders on unlabeled multi-angle MISR imagery to extract 40-dimensional latent embeddings, then classified cloud cover and terrain with tree-based ensembles, reaching <strong>98.74% classification accuracy</strong>.</p>
+          <p>Cloud cover distorts nearly every satellite-based climate measurement. Cloud detection in polar regions is especially difficult since snow and ice visually mimic clouds. Pre-trained multi-layer neural network autoencoders on unlabeled multi-angle MISR imagery to extract 40-dimensional latent embeddings, then classified cloud cover and terrain with tree-based ensembles, reaching <strong>98.74% classification accuracy</strong>.</p>
           <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
           <ul class="project-highlights" hidden>
             <li>Pre-trained multi-layer neural network autoencoders via transfer learning on unlabeled multi-angle satellite imagery, extracting 40-dimensional latent embeddings across spatial 3x3 to 9x9 neighbor windows.</li>
