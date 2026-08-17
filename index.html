@@ -255,7 +255,7 @@
           <p>Cloud cover distorts nearly every satellite-based climate measurement. Cloud detection in polar regions is especially difficult since snow and ice visually mimic clouds. Moreover, expert labels are scarce: only 3 of the 164 MISR images used here are labeled, further adding to the difficulty of analysis common amongst remote sensing ML applications. This project tackles the problem of detecting cloud cover in polar regions given the lack of labeled data and the risk of spatial autocorrelation inflating validation performance</p>
           <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
           <ul class="project-highlights" hidden>
-            <li>Pre-trained multi-layer neural network autoencoders on unlabeled multi-angle MISR imagery via transfer learning, extracting 40-dimensional latent embeddings across spatial 3x3 to 9x9 neighbor windows.</li>
+            <li>Pre-trained multi-layer neural network autoencoders on unlabeled multi-angle MISR imagery (source: NASA) via transfer learning, extracting 40-dimensional latent embeddings across spatial 3x3 to 9x9 neighbor windows.</li>
             <li>Classified cloud cover and terrain by training LightGBM, Random Forest, and k-NN models on the resulting multi-angular spatial features, reaching <strong>98.74% classification accuracy</strong> on complex, unstructured imagery.</li>
             <li>Ran quadrant-based spatial cross-validation and perturbation/noise-injection stress testing to evaluate model stability and out-of-distribution generalization.</li>
           </ul>
