@@ -19,6 +19,7 @@
     <li class="nav-item mx-4"><a class="nav-link" href="#experience">Experience</a></li>
     <li class="nav-item mx-4"><a class="nav-link" href="#projects">Projects</a></li>
     <li class="nav-item mx-4"><a class="nav-link" href="#skills">Skills</a></li>
+    <li class="nav-item mx-4"><a class="nav-link" href="#beyond-work">Beyond Work</a></li>
     <li class="nav-item mx-4"><a class="nav-link" href="docs/KevinXu_Resume_DS_8_14.pdf">Resume</a></li>
   </ul>
 </nav>
@@ -43,42 +44,7 @@
       </div>
       <div class="hero-about mx-auto mt-5">
         <p>AI and Data Engineer with experience architecting high-throughput PySpark/SQL data pipelines, production LLM agent architectures, and PEFT/LoRA fine-tuning workflows. Skilled in bridging cloud infrastructure with statistical modeling to design pre-warehouse validation layers, latent embedding search, and anomaly detection systems, taking systems from MVP design to high-availability deployment for federal portfolios and large-scale data applications.</p>
-        <p>Masters degree in Statistics from UC Berkeley, where I focused on machine learning, time-series analysis, and bayesian analysis.</p>
-        <p>Beyond my professional pursuits, I enjoy backpacking, chess, traveling, and listening to classic rock. Check out some pictures from my travels! </p>
-        <div class="travel-slideshow reveal">
-          <div class="travel-slide-viewport" tabindex="0" aria-roledescription="carousel" aria-label="Travel photos">
-            <img src="images/image8.jpeg" alt="Travel photo 1" class="travel-slide is-active">
-            <img src="images/image0.jpeg" alt="Travel photo 2" class="travel-slide">
-            <img src="images/image1.png" alt="Travel photo 3" class="travel-slide">
-            <img src="images/image2.jpeg" alt="Travel photo 4" class="travel-slide">
-            <img src="images/image3.jpeg" alt="Travel photo 5" class="travel-slide">
-            <img src="images/image4.jpeg" alt="Travel photo 6" class="travel-slide">
-            <img src="images/image5.jpeg" alt="Travel photo 7" class="travel-slide">
-            <img src="images/image6.jpeg" alt="Travel photo 8" class="travel-slide">
-            <img src="images/image7.jpeg" alt="Travel photo 9" class="travel-slide">
-            <img src="images/image9.jpeg" alt="Travel photo 10" class="travel-slide">
-            <img src="images/image11.jpeg" alt="Travel photo 11" class="travel-slide">
-            <button class="travel-nav-btn travel-prev" type="button" aria-label="Previous photo">
-              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-            </button>
-            <button class="travel-nav-btn travel-next" type="button" aria-label="Next photo">
-              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-            </button>
-          </div>
-          <div class="travel-dots" role="tablist" aria-label="Choose a travel photo">
-            <button class="travel-dot is-active" type="button" aria-label="Photo 1" aria-selected="true"></button>
-            <button class="travel-dot" type="button" aria-label="Photo 2" aria-selected="false"></button>
-            <button class="travel-dot" type="button" aria-label="Photo 3" aria-selected="false"></button>
-            <button class="travel-dot" type="button" aria-label="Photo 4" aria-selected="false"></button>
-            <button class="travel-dot" type="button" aria-label="Photo 5" aria-selected="false"></button>
-            <button class="travel-dot" type="button" aria-label="Photo 6" aria-selected="false"></button>
-            <button class="travel-dot" type="button" aria-label="Photo 7" aria-selected="false"></button>
-            <button class="travel-dot" type="button" aria-label="Photo 8" aria-selected="false"></button>
-            <button class="travel-dot" type="button" aria-label="Photo 9" aria-selected="false"></button>
-            <button class="travel-dot" type="button" aria-label="Photo 10" aria-selected="false"></button>
-            <button class="travel-dot" type="button" aria-label="Photo 11" aria-selected="false"></button>
-          </div>
-        </div>
+        <p>Master's degree in Statistics from UC Berkeley, where I focused on machine learning, time-series analysis, and Bayesian analysis.</p>
       </div>
     </div>
   </section>
@@ -123,11 +89,11 @@
           <h5>Consultant (Data Science)</h5>
           <p class="experience-subtitle mb-0"><em>Deloitte, San Francisco</em></p>
           <p class="experience-date mb-3">Aug 2022 – Apr 2025</p>
-          <p class="experience-intro">Owned anomaly detection, data lineage, and high-throughput reconciliation systems for a <strong>$12.2B Department of Defense financial portfolio</strong>, taking each system from MVP design to high-availability deployment under strict external audit constraints.</p>
+          <p class="experience-intro">After Ernst & Young (EY), the portfolio's external auditor, raised serious concerns through Notices of Findings and Recommendations (NFRs), Deloitte was brought in to design and execute the technological transformation of the Air Force's Military Equipment Valuation (MEV) enterprise. Owned anomaly detection, data lineage, and high-throughput reconciliation systems for this <strong>$12.2B Department of Defense financial portfolio</strong>, taking each system from MVP design to high-availability deployment under strict audit remediation timelines.</p>
           <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
           <ul hidden>
             <li>Designed and owned a rule-based anomaly detection engine automating pattern recognition for valuation mismatches, duplicate records, and cross-system breaks; <strong>surfaced ~$22M in recoverable assets</strong>, iteratively feeding audit findings back into detection logic.</li>
-            <li>Re-engineered 8+ legacy reconciliation workflows into modular PySpark/Databricks pipelines with explicit schema contracts and execution gates, <strong>reducing processing latency from hours to minutes (~80% runtime reduction)</strong> under strict EY audit constraints.</li>
+            <li>Re-engineered 8+ legacy reconciliation workflows into modular PySpark/Databricks pipelines with explicit schema contracts and execution gates, <strong>reducing processing latency from hours to minutes (~80% runtime reduction)</strong> to meet EY's remediation timelines.</li>
             <li>Architected batch ingestion pipelines consolidating multi-source data streams into a unified AWS S3 data lake, building <strong>pre-warehouse validation layers, schema enforcement, and threshold-based quality gates</strong> to prevent corrupted data from propagating downstream.</li>
             <li>Engineered a full-graph data lineage framework tagging records with transformation histories and validation outcomes, <strong>ensuring pipeline transparency for external audit compliance</strong>.</li>
             <li>Authored system-level technical documentation, built real-time portfolio health dashboards, and <strong>mentored 4 junior data scientists</strong> on production workflows and pipeline reliability.</li>
@@ -233,7 +199,7 @@
         <div class="project-row-content">
           <span class="project-label">Risk Modeling</span>
           <h3 class="project-title">Feature Cost vs Signal in Credit Risk Prediction</h3>
-          <p>In production, every extra feature carries a additional collection costs. Knowing when a simpler model is good enough is nontrivial, as it directly informs which features are worth their collection cost. Built cost-sensitive classification models to evaluate credit risk under asymmetric loss and real data-collection cost. A parsimonious 2-variable model matched full-ensemble performance, cutting the pipeline's operational cost.</p>
+          <p>In production, every extra feature carries an additional collection cost. Knowing when a simpler model is good enough is nontrivial, as it directly informs which features are worth their collection cost. Built cost-sensitive classification models to evaluate credit risk under asymmetric loss and real data-collection cost. A parsimonious 2-variable model matched full-ensemble performance, cutting the pipeline's operational cost.</p>
           <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
           <ul class="project-highlights" hidden>
             <li>Built XGBoost and LightGBM models under a 5:1 false-negative penalty.</li>
@@ -252,7 +218,7 @@
         <div class="project-row-content">
           <span class="project-label">Geospatial Analysis</span>
           <h3 class="project-title">Polar Cloud Detection using Geospatial Satellite Imagery</h3>
-          <p>Cloud cover commonly distorts satellite-based climate measurement which makes cloud detection in polar regions especially difficult since snow and ice visually mimic clouds. Moreover, expert labels are scarce: only 3 of the 164 MISR images used here are labeled, further adding to the difficulty of analysis common amongst remote sensing ML applications. This project tackles the problem of detecting cloud cover in polar regions given the lack of labeled data and the risk of spatial autocorrelation inflating validation performance</p>
+          <p>Cloud cover commonly distorts satellite-based climate measurements, which makes cloud detection in polar regions especially difficult since snow and ice visually mimic clouds. Moreover, expert labels are scarce: only 3 of the 164 MISR images used here are labeled, further adding to the difficulty of analysis common amongst remote sensing ML applications. This project tackles the problem of detecting cloud cover in polar regions given the lack of labeled data and the risk of spatial autocorrelation inflating validation performance.</p>
           <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
           <ul class="project-highlights" hidden>
             <li>Pre-trained multi-layer neural network autoencoders on unlabeled multi-angle MISR imagery (source: NASA) via transfer learning, extracting 40-dimensional latent embeddings across spatial 3x3 to 9x9 neighbor windows.</li>
@@ -386,6 +352,50 @@
             <span class="skill-chip">Reconciliation</span>
             <span class="skill-chip">Variance Analysis</span>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="beyond-work" class="section-block section-card my-5 p-5">
+    <div class="section-header text-center mb-4">
+      <span class="section-eyebrow">Beyond Work</span>
+      <h2><i class="fa-solid fa-plane me-2 item-icon" aria-hidden="true"></i>Travel</h2>
+    </div>
+    <div class="text-center reveal">
+      <p class="section-copy mx-auto" style="max-width: 680px;">Beyond my professional pursuits, I enjoy backpacking, chess, traveling, and listening to classic rock. Check out some pictures from my travels!</p>
+      <div class="travel-slideshow">
+        <div class="travel-slide-viewport" tabindex="0" aria-roledescription="carousel" aria-label="Travel photos">
+          <img src="images/image8.jpeg" alt="Travel photo 1" class="travel-slide is-active">
+          <img src="images/image0.jpeg" alt="Travel photo 2" class="travel-slide">
+          <img src="images/image1.png" alt="Travel photo 3" class="travel-slide">
+          <img src="images/image2.jpeg" alt="Travel photo 4" class="travel-slide">
+          <img src="images/image3.jpeg" alt="Travel photo 5" class="travel-slide">
+          <img src="images/image4.jpeg" alt="Travel photo 6" class="travel-slide">
+          <img src="images/image5.jpeg" alt="Travel photo 7" class="travel-slide">
+          <img src="images/image6.jpeg" alt="Travel photo 8" class="travel-slide">
+          <img src="images/image7.jpeg" alt="Travel photo 9" class="travel-slide">
+          <img src="images/image9.jpeg" alt="Travel photo 10" class="travel-slide">
+          <img src="images/image11.jpeg" alt="Travel photo 11" class="travel-slide">
+          <button class="travel-nav-btn travel-prev" type="button" aria-label="Previous photo">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button class="travel-nav-btn travel-next" type="button" aria-label="Next photo">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="travel-dots" role="tablist" aria-label="Choose a travel photo">
+          <button class="travel-dot is-active" type="button" aria-label="Photo 1" aria-selected="true"></button>
+          <button class="travel-dot" type="button" aria-label="Photo 2" aria-selected="false"></button>
+          <button class="travel-dot" type="button" aria-label="Photo 3" aria-selected="false"></button>
+          <button class="travel-dot" type="button" aria-label="Photo 4" aria-selected="false"></button>
+          <button class="travel-dot" type="button" aria-label="Photo 5" aria-selected="false"></button>
+          <button class="travel-dot" type="button" aria-label="Photo 6" aria-selected="false"></button>
+          <button class="travel-dot" type="button" aria-label="Photo 7" aria-selected="false"></button>
+          <button class="travel-dot" type="button" aria-label="Photo 8" aria-selected="false"></button>
+          <button class="travel-dot" type="button" aria-label="Photo 9" aria-selected="false"></button>
+          <button class="travel-dot" type="button" aria-label="Photo 10" aria-selected="false"></button>
+          <button class="travel-dot" type="button" aria-label="Photo 11" aria-selected="false"></button>
         </div>
       </div>
     </div>
