@@ -20,7 +20,6 @@
     <li class="nav-item mx-4"><a class="nav-link" href="#projects">Projects</a></li>
     <li class="nav-item mx-4"><a class="nav-link" href="#skills">Skills</a></li>
     <li class="nav-item mx-4"><a class="nav-link" href="#beyond-work">Beyond Work</a></li>
-    <li class="nav-item mx-4"><a class="nav-link" href="docs/KevinXu_Resume_DS_8_14.pdf">Resume</a></li>
   </ul>
 </nav>
 
@@ -34,6 +33,7 @@
       <img src="images/KX.jpg" alt="Kevin Xu" class="avatar-img mx-auto my-4">
       <p class="hero-copy mx-auto">Welcome. Feel free to explore my work and get in touch!</p>
       <div class="hero-actions mt-4">
+        <a href="#projects" class="btn btn-outline-light btn-lg mx-2">View Projects</a>
         <a href="docs/KevinXu_Resume_DS_8_14.pdf" class="btn btn-primary btn-lg mx-2">Download Resume</a>
       </div>
       <p class="hero-note mt-4">San Francisco, CA · kxu9787@gmail.com · 530-601-3082</p>
@@ -91,7 +91,7 @@
           <p class="experience-date mb-3">Aug 2022 – Apr 2025</p>
           <p class="experience-intro">After Ernst & Young (EY), the portfolio's external auditor, raised serious concerns through Notices of Findings and Recommendations (NFRs), Deloitte was brought in to design and execute the technological transformation of the Air Force's Military Equipment Valuation (MEV) enterprise. Owned anomaly detection, data lineage, and high-throughput reconciliation systems for this <strong>$12.2B Department of Defense financial portfolio</strong>, taking each system from MVP design to high-availability deployment under strict audit remediation timelines.</p>
           <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
-          <ul hidden>
+          <ul class="collapsible">
             <li>Designed and owned a rule-based anomaly detection engine automating pattern recognition for valuation mismatches, duplicate records, and cross-system breaks; <strong>surfaced ~$22M in recoverable assets</strong>, iteratively feeding audit findings back into detection logic.</li>
             <li>Re-engineered 8+ legacy reconciliation workflows into modular PySpark/Databricks pipelines with explicit schema contracts and execution gates, <strong>reducing processing latency from hours to minutes (~80% runtime reduction)</strong> to meet EY's remediation timelines.</li>
             <li>Architected batch ingestion pipelines consolidating multi-source data streams into a unified AWS S3 data lake, building <strong>pre-warehouse validation layers, schema enforcement, and threshold-based quality gates</strong> to prevent corrupted data from propagating downstream.</li>
@@ -123,137 +123,350 @@
       <span class="section-eyebrow">Projects</span>
       <h2>Data Science & Engineering Projects</h2>
     </div>
-    <div class="projects-list">
 
-      <div class="project-row reveal d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
-        <div class="project-row-media">
-          <img src="images/text_to_SQL.png" alt="Text-to-SQL agent chart output" class="project-image project-image-native">
-        </div>
-        <div class="project-row-content">
-          <span class="project-label">AI Agent · Text-to-SQL</span>
-          <h3 class="project-title">Text-to-SQL Agent for Revenue and Churn Analytics</h3>
-          <p>SQL fluency shouldn't be a prerequisite for getting answers from data, yet it remains the biggest bottleneck between a business question and a business insight. Converts plain-English business questions into validated SQL, letting stakeholders self-serve revenue and churn metrics without waiting on an analyst. Two independent safety layers keep every generated query read-only and schema-approved.</p>
-          <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
-          <ul class="project-highlights" hidden>
-            <li>Engineered an end-to-end agentic Text-to-SQL system using LangChain and LLM reasoning workflows to convert natural-language queries into executable, optimized SQL.</li>
-            <li>Enforced two-layer safety: AST parsing via sqlglot restricts queries to SELECT-only on approved views, backed by read-only DuckDB execution as a failsafe.</li>
-            <li>Implemented automated error-handling and self-correction loops so invalid or failing SQL is automatically retried and repaired before being surfaced to the user.</li>
-            <li>Computed ratio metrics like ARM and churn rate dynamically using Delta Method confidence intervals validated through Monte Carlo simulation.</li>
-            <li>Used ChromaDB semantic retrieval over approved metric/schema definitions so the agent declines undefined-metric questions instead of hallucinating.</li>
-          </ul>
-          <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
-          <p class="project-meta mb-3"><strong>Frameworks:</strong> LangChain, DuckDB, dbt / MetricFlow, ChromaDB, sqlglot, Anthropic Claude API</p>
-          <div class="d-flex flex-wrap gap-2">
-            <a href="https://github.com/Sgipn/Text_to_SQL_Agent_for_Revenue_and_Churn_Analytics" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-            <a href="https://semantic-metric-repository.onrender.com/" class="btn btn-live-demo" target="_blank" rel="noopener noreferrer">Live Demo</a>
+    <div class="project-orbit-wrap reveal" id="projectOrbitWrap">
+      <div class="project-orbit-stage" id="projectOrbitStage">
+
+        <div class="project-orbit-timeline" id="projectOrbitTimeline">
+          <div class="project-sky-tone project-sky-tone-dusk" aria-hidden="true"></div>
+          <div class="project-sky-tone project-sky-tone-night" id="projectSkyNight" aria-hidden="true"></div>
+          <div class="project-sun-sky" aria-hidden="true">
+            <div class="project-sun" id="projectSun"></div>
           </div>
-          <p class="project-note mt-2 mb-0">Hosted on a free tier so the demo may take ~30s to wake up on first load.</p>
-        </div>
-      </div>
+          <div class="project-orbit-scroller" id="projectOrbitScroller">
+            <div class="project-orbit" id="projectOrbit">
 
-      <div class="project-row project-row-reverse reveal d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
-        <div class="project-row-media">
-          <img src="images/fmri.jpg" alt="fMRI brain activity visualization" class="project-image">
-        </div>
-        <div class="project-row-content">
-          <span class="project-label">Neuroscience · NLP</span>
-          <h3 class="project-title">Language to Brain Signal Analysis</h3>
-          <p>Understanding how the brain represents language could inform brain-computer interfaces and reveal whether today's AI language models actually mirror human cognition. Built a voxel-wise ridge regression pipeline across ~190K voxels (2 subjects, 101 stories) comparing six embedding strategies: static and custom-trained embeddings carried near-zero signal (mean correlation ≈ 0.01), while pretrained BERT embeddings improved correlation by ~80%.</p>
-          <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
-          <ul class="project-highlights" hidden>
-            <li>Designed a 6-way comparative study (Bag-of-Words, Word2Vec, GloVe, a custom-trained BERT-style encoder, pretrained BERT, and a LoRA fine-tuned BERT) to identify which representation best predicts brain activity during natural story listening.</li>
-            <li>Ran per-voxel grid search and cross-validation across ~190K voxels; static and custom embeddings carried near-zero signal (mean CC ≈ 0.01) while pretrained BERT gave ~+80% in correlation.</li>
-            <li>Fine-tuned bert-base-uncased with PEFT/LoRA in PyTorch (Optuna hyperparameter search), finding only marginal, inconsistent gains over the base pretrained model.</li>
-            <li>Applied SHAP and LIME to the best-predicted voxels to surface interpretable word-level drivers of brain activation.</li>
-          </ul>
-          <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
-          <p class="project-meta mb-3"><strong>Frameworks:</strong> PyTorch, Hugging Face Transformers, LoRA/PEFT, scikit-learn, SHAP, LIME, Optuna</p>
-          <a href="https://github.com/Sgipn/Language_to_Brain_Encoding" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-        </div>
-      </div>
+              <div class="project-node-wrap" style="--node-left:120px; --node-top:464px;">
+                <span class="project-node-year">2026</span>
+                <button class="project-node" type="button" data-project="text-to-sql">
+                  <span class="project-node-face">
+                    <img src="images/text_to_SQL.png" alt="" class="project-node-thumb">
+                    <span class="project-node-label">Text-to-SQL Agent</span>
+                  </span>
+                  <span class="project-node-back">
+                    <span class="project-node-blurb">Plain-English questions to validated SQL for revenue and churn analytics.</span>
+                  </span>
+                </button>
+              </div>
 
-      <div class="project-row reveal d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
-        <div class="project-row-media">
-          <img src="images/branin_results.png" alt="Bayesian optimization results on the Branin benchmark function" class="project-image">
-        </div>
-        <div class="project-row-content">
-          <span class="project-label">Optimization · Fraud Detection</span>
-          <h3 class="project-title">Efficient Hyperparameter Tuning Using Bayesian Optimization for Credit Fraud Detection Applications</h3>
-          <p>Fraud detection models are notoriously expensive to tune, and every wasted hyperparameter search delays catching fraud that costs real money. Applied Gaussian Process-based Bayesian Optimization to tune LightGBM for imbalanced fraud detection, validated on classic benchmark functions before deployment. Reached stronger Average Precision with far fewer model evaluations than a grid search would need.</p>
-          <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
-          <ul class="project-highlights" hidden>
-            <li>Implemented a GP surrogate with a Matérn kernel and compared Expected Improvement vs. Lower Confidence Bound acquisition functions for sample-efficient search.</li>
-            <li>Validated convergence behavior on benchmark functions (Branin, Hartmann-3) before applying the same pipeline to the IEEE-CIS fraud dataset.</li>
-            <li>Tuned LightGBM under stratified 5-fold cross-validation, optimizing for Average Precision on highly imbalanced fraud labels.</li>
-          </ul>
-          <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
-          <p class="project-meta mb-3"><strong>Frameworks:</strong> LightGBM, scikit-learn, Gaussian Processes</p>
-          <a href="https://github.com/Sgipn/Bayesian_Optimization_Fraud_Detection" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-        </div>
-      </div>
+              <div class="project-node-wrap" style="--node-left:340px; --node-top:464px;">
+                <span class="project-node-year">2026</span>
+                <button class="project-node" type="button" data-project="bayesian">
+                  <span class="project-node-face">
+                    <img src="images/branin_results.png" alt="" class="project-node-thumb">
+                    <span class="project-node-label">Bayesian Optimization for Fraud Detection</span>
+                  </span>
+                  <span class="project-node-back">
+                    <span class="project-node-blurb">Tuning fraud-detection models faster with Bayesian Optimization.</span>
+                  </span>
+                </button>
+              </div>
 
-      <div class="project-row project-row-reverse reveal d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
-        <div class="project-row-media">
-          <img src="images/credit_risk_roc.png" alt="Credit risk model ROC curve" class="project-image">
-        </div>
-        <div class="project-row-content">
-          <span class="project-label">Risk Modeling</span>
-          <h3 class="project-title">Feature Cost vs Signal in Credit Risk Prediction</h3>
-          <p>In production, every extra feature carries an additional collection cost. Knowing when a simpler model is good enough is nontrivial, as it directly informs which features are worth their collection cost. Built cost-sensitive classification models to evaluate credit risk under asymmetric loss and real data-collection cost. A parsimonious 2-variable model matched full-ensemble performance, cutting the pipeline's operational cost.</p>
-          <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
-          <ul class="project-highlights" hidden>
-            <li>Built XGBoost and LightGBM models under a 5:1 false-negative penalty.</li>
-            <li>Reduced multicollinearity with VIF analysis to show a parsimonious 2-variable model with comparable performance.</li>
-          </ul>
-          <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
-          <p class="project-meta mb-3"><strong>Frameworks:</strong> XGBoost, LightGBM, scikit-learn</p>
-          <a href="https://github.com/Sgipn/Feature_Cost_vs_Signal_in_Credit_Risk_Prediction" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-        </div>
-      </div>
+              <div class="project-node-wrap" style="--node-left:560px; --node-top:464px;">
+                <span class="project-node-year">2026</span>
+                <button class="project-node" type="button" data-project="credit-risk">
+                  <span class="project-node-face">
+                    <img src="images/credit_risk_roc.png" alt="" class="project-node-thumb">
+                    <span class="project-node-label">Feature Cost vs Signal in Credit Risk</span>
+                  </span>
+                  <span class="project-node-back">
+                    <span class="project-node-blurb">Weighing feature cost against predictive signal.</span>
+                  </span>
+                </button>
+              </div>
 
-      <div class="project-row reveal d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
-        <div class="project-row-media">
-          <img src="images/polar_clour.png" alt="Polar satellite cloud-detection output" class="project-image">
-        </div>
-        <div class="project-row-content">
-          <span class="project-label">Geospatial Analysis</span>
-          <h3 class="project-title">Polar Cloud Detection using Geospatial Satellite Imagery</h3>
-          <p>Cloud cover commonly distorts satellite-based climate measurements, which makes cloud detection in polar regions especially difficult since snow and ice visually mimic clouds. Moreover, expert labels are scarce: only 3 of the 164 MISR images used here are labeled, further adding to the difficulty of analysis common amongst remote sensing ML applications. This project tackles the problem of detecting cloud cover in polar regions given the lack of labeled data and the risk of spatial autocorrelation inflating validation performance.</p>
-          <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
-          <ul class="project-highlights" hidden>
-            <li>Pre-trained multi-layer neural network autoencoders on unlabeled multi-angle MISR imagery (source: NASA) via transfer learning, extracting 40-dimensional latent embeddings across spatial 3x3 to 9x9 neighbor windows.</li>
-            <li>Classified cloud cover and terrain by training LightGBM, Random Forest, and k-NN models on the resulting multi-angular spatial features, reaching <strong>98.74% classification accuracy</strong> on unstructured imagery.</li>
-            <li>Ran quadrant-based spatial cross-validation and perturbation/noise-injection stress testing to evaluate model stability and out-of-distribution generalization.</li>
-          </ul>
-          <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
-          <p class="project-meta mb-3"><strong>Frameworks:</strong> TensorFlow / Keras, scikit-learn, LightGBM</p>
-          <a href="https://github.com/Sgipn/Polar_Cloud_Detection" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-        </div>
-      </div>
+              <div class="project-node-wrap" style="--node-left:780px; --node-top:464px;">
+                <span class="project-node-year">2025</span>
+                <button class="project-node" type="button" data-project="fmri">
+                  <span class="project-node-face">
+                    <img src="images/fmri.jpg" alt="" class="project-node-thumb">
+                    <span class="project-node-label">Language to Brain Signal Analysis</span>
+                  </span>
+                  <span class="project-node-back">
+                    <span class="project-node-blurb">Mapping fMRI brain activity to language embeddings.</span>
+                  </span>
+                </button>
+              </div>
 
-      <div class="project-row project-row-reverse reveal d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
-        <div class="project-row-media">
-          <img src="images/co2.jpg" alt="CO2 emissions data" class="project-image">
-        </div>
-        <div class="project-row-content">
-          <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
-            <span class="project-label mb-0">Streaming · Kafka / Airflow</span>
-            <span class="badge project-status-badge">In Progress</span>
+              <div class="project-node-wrap" style="--node-left:1000px; --node-top:464px;">
+                <span class="project-node-year">2024</span>
+                <button class="project-node" type="button" data-project="polar-cloud">
+                  <span class="project-node-face">
+                    <img src="images/polar_clour.png" alt="" class="project-node-thumb">
+                    <span class="project-node-label">Polar Cloud Detection</span>
+                  </span>
+                  <span class="project-node-back">
+                    <span class="project-node-blurb">Detecting clouds in polar satellite imagery.</span>
+                  </span>
+                </button>
+              </div>
+
+              <div class="project-node-wrap" style="--node-left:1220px; --node-top:464px;">
+                <span class="project-node-year">2022</span>
+                <button class="project-node" type="button" data-project="hackdavis">
+                  <span class="project-node-face">
+                    <img src="images/heart_disease.jpg" alt="" class="project-node-thumb">
+                    <span class="project-node-label">Heart Disease Risk Predictor</span>
+                  </span>
+                  <span class="project-node-back">
+                    <span class="project-node-blurb">A web app predicting heart disease risk from CDC health survey data.</span>
+                  </span>
+                </button>
+              </div>
+
+              <div class="project-node-wrap" style="--node-left:1440px; --node-top:464px;">
+                <span class="project-node-year">2021</span>
+                <button class="project-node" type="button" data-project="tiktokify">
+                  <span class="project-node-face">
+                    <img src="images/spotify_logo.jpg" alt="" class="project-node-thumb">
+                    <span class="project-node-label">TikTokify</span>
+                  </span>
+                  <span class="project-node-back">
+                    <span class="project-node-blurb">Comparing Spotify audio features of TikTok-popular vs. mainstream U.S. songs.</span>
+                  </span>
+                </button>
+              </div>
+
+              <div class="project-node-wrap" style="--node-left:1660px; --node-top:464px;">
+                <span class="project-node-year">2021</span>
+                <button class="project-node" type="button" data-project="airbnb">
+                  <span class="project-node-face">
+                    <img src="images/airbnb.jpg" alt="" class="project-node-thumb">
+                    <span class="project-node-label">Airbnb Price Prediction</span>
+                  </span>
+                  <span class="project-node-back">
+                    <span class="project-node-blurb">Predicting NYC Airbnb prices with regularized regression models.</span>
+                  </span>
+                </button>
+              </div>
+
+              <div class="project-node-wrap" style="--node-left:1880px; --node-top:464px;">
+                <span class="project-node-year">2020</span>
+                <button class="project-node" type="button" data-project="vehicle-classification">
+                  <span class="project-node-face">
+                    <img src="images/car_detection.jpg" alt="" class="project-node-thumb">
+                    <span class="project-node-label">Vehicle Classification</span>
+                  </span>
+                  <span class="project-node-back">
+                    <span class="project-node-blurb">Classifying vehicle types from images using PCA and supervised learning.</span>
+                  </span>
+                </button>
+              </div>
+
+            </div>
           </div>
-          <h3 class="project-title">Streaming Pipeline for Emissions Forecasting</h3>
-          <p>Emissions data loses much of its value when it's only available in batch, since regulators and operators need to react to spikes as they happen, not days later. Extended the CA Industrial Emissions work into a streaming ingestion and orchestration pipeline with Kafka and Airflow. Automated health checks and replay logic keep daily emissions scoring resilient enough for operational decisions.</p>
-          <p class="project-status mb-2"><strong>Status:</strong> This project is actively in development and not yet feature-complete.</p>
-          <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
-          <ul class="project-highlights" hidden>
-            <li>Built an event-driven layer to ingest sensor and regulatory data into a daily scoring pipeline.</li>
-            <li>Designed automatic health checks and replay logic for resilient production delivery.</li>
-            <li>Enabled fast operational decisions with a live stream pipeline and observability hooks.</li>
-          </ul>
-          <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
-          <p class="project-meta mb-0"><strong>Frameworks:</strong> Apache Kafka, Apache Airflow</p>
+          <div class="project-scroll-zone project-scroll-zone-left" id="scrollZoneLeft" aria-hidden="true"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></div>
+          <div class="project-scroll-zone project-scroll-zone-right" id="scrollZoneRight" aria-hidden="true"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+        </div>
+
+        <div class="project-detail-view" id="projectDetailView">
+
+          <div class="project-detail-panel" data-project="text-to-sql">
+            <button class="project-detail-back" type="button"><i class="fa-solid fa-arrow-left me-2" aria-hidden="true"></i>All Projects</button>
+            <div class="project-row d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
+              <div class="project-row-media">
+                <img src="images/text_to_SQL.png" alt="Text-to-SQL agent chart output" class="project-image project-image-native">
+              </div>
+              <div class="project-row-content">
+                <span class="project-label">AI Agent · Text-to-SQL</span>
+                <h3 class="project-title">Text-to-SQL Agent for Revenue and Churn Analytics <span class="project-title-year">(2026)</span></h3>
+                <p>SQL fluency shouldn't be a prerequisite for getting answers from data, yet it remains the biggest bottleneck between a business question and a business insight. Converts plain-English business questions into validated SQL, letting stakeholders self-serve revenue and churn metrics without waiting on an analyst. Two independent safety layers keep every generated query read-only and schema-approved.</p>
+                <ul class="project-highlights">
+                  <li>Engineered an end-to-end agentic Text-to-SQL system using LangChain and LLM reasoning workflows to convert natural-language queries into executable, optimized SQL.</li>
+                  <li>Enforced two-layer safety: AST parsing via sqlglot restricts queries to SELECT-only on approved views, backed by read-only DuckDB execution as a failsafe.</li>
+                  <li>Implemented automated error-handling and self-correction loops so invalid or failing SQL is automatically retried and repaired before being surfaced to the user.</li>
+                  <li>Computed ratio metrics like ARM and churn rate dynamically using Delta Method confidence intervals validated through Monte Carlo simulation.</li>
+                  <li>Used ChromaDB semantic retrieval over approved metric/schema definitions so the agent declines undefined-metric questions instead of hallucinating.</li>
+                </ul>
+                <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
+                <p class="project-meta mb-3"><strong>Frameworks:</strong> LangChain, DuckDB, dbt / MetricFlow, ChromaDB, sqlglot, Anthropic Claude API</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <a href="https://github.com/Sgipn/Text_to_SQL_Agent_for_Revenue_and_Churn_Analytics" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                  <a href="https://semantic-metric-repository.onrender.com/" class="btn btn-live-demo" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                </div>
+                <p class="project-note mt-2 mb-0">Hosted on a free tier so the demo may take ~30s to wake up on first load.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-detail-panel" data-project="fmri">
+            <button class="project-detail-back" type="button"><i class="fa-solid fa-arrow-left me-2" aria-hidden="true"></i>All Projects</button>
+            <div class="project-row d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
+              <div class="project-row-media">
+                <img src="images/fmri.jpg" alt="fMRI brain activity visualization" class="project-image">
+              </div>
+              <div class="project-row-content">
+                <span class="project-label">Neuroscience · NLP</span>
+                <h3 class="project-title">Language to Brain Signal Analysis <span class="project-title-year">(2025)</span></h3>
+                <p>Understanding how the brain represents language could inform brain-computer interfaces and reveal whether today's AI language models actually mirror human cognition. Built a voxel-wise ridge regression pipeline across ~190K voxels (2 subjects, 101 stories) comparing six embedding strategies: static and custom-trained embeddings carried near-zero signal (mean correlation ≈ 0.01), while pretrained BERT embeddings improved correlation by ~80%.</p>
+                <ul class="project-highlights">
+                  <li>Designed a 6-way comparative study (Bag-of-Words, Word2Vec, GloVe, a custom-trained BERT-style encoder, pretrained BERT, and a LoRA fine-tuned BERT) to identify which representation best predicts brain activity during natural story listening.</li>
+                  <li>Ran per-voxel grid search and cross-validation across ~190K voxels; static and custom embeddings carried near-zero signal (mean CC ≈ 0.01) while pretrained BERT gave ~+80% in correlation.</li>
+                  <li>Fine-tuned bert-base-uncased with PEFT/LoRA in PyTorch (Optuna hyperparameter search), finding only marginal, inconsistent gains over the base pretrained model.</li>
+                  <li>Applied SHAP and LIME to the best-predicted voxels to surface interpretable word-level drivers of brain activation.</li>
+                </ul>
+                <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
+                <p class="project-meta mb-3"><strong>Frameworks:</strong> PyTorch, Hugging Face Transformers, LoRA/PEFT, scikit-learn, SHAP, LIME, Optuna</p>
+                <a href="https://github.com/Sgipn/Language_to_Brain_Encoding" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-detail-panel" data-project="bayesian">
+            <button class="project-detail-back" type="button"><i class="fa-solid fa-arrow-left me-2" aria-hidden="true"></i>All Projects</button>
+            <div class="project-row d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
+              <div class="project-row-media">
+                <img src="images/branin_results.png" alt="Bayesian optimization results on the Branin benchmark function" class="project-image">
+              </div>
+              <div class="project-row-content">
+                <span class="project-label">Optimization · Fraud Detection</span>
+                <h3 class="project-title">Efficient Hyperparameter Tuning Using Bayesian Optimization for Credit Fraud Detection Applications <span class="project-title-year">(2026)</span></h3>
+                <p>Fraud detection models are notoriously expensive to tune, and every wasted hyperparameter search delays catching fraud that costs real money. Applied Gaussian Process-based Bayesian Optimization to tune LightGBM for imbalanced fraud detection, validated on classic benchmark functions before deployment. Reached stronger Average Precision with far fewer model evaluations than a grid search would need.</p>
+                <ul class="project-highlights">
+                  <li>Implemented a GP surrogate with a Matérn kernel and compared Expected Improvement vs. Lower Confidence Bound acquisition functions for sample-efficient search.</li>
+                  <li>Validated convergence behavior on benchmark functions (Branin, Hartmann-3) before applying the same pipeline to the IEEE-CIS fraud dataset.</li>
+                  <li>Tuned LightGBM under stratified 5-fold cross-validation, optimizing for Average Precision on highly imbalanced fraud labels.</li>
+                </ul>
+                <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
+                <p class="project-meta mb-3"><strong>Frameworks:</strong> LightGBM, scikit-learn, Gaussian Processes</p>
+                <a href="https://github.com/Sgipn/Bayesian_Optimization_Fraud_Detection" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-detail-panel" data-project="credit-risk">
+            <button class="project-detail-back" type="button"><i class="fa-solid fa-arrow-left me-2" aria-hidden="true"></i>All Projects</button>
+            <div class="project-row d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
+              <div class="project-row-media">
+                <img src="images/credit_risk_roc.png" alt="Credit risk model ROC curve" class="project-image">
+              </div>
+              <div class="project-row-content">
+                <span class="project-label">Risk Modeling</span>
+                <h3 class="project-title">Feature Cost vs Signal in Credit Risk Prediction <span class="project-title-year">(2026)</span></h3>
+                <p>In production, every extra feature carries an additional collection cost. Knowing when a simpler model is good enough is nontrivial, as it directly informs which features are worth their collection cost. Built cost-sensitive classification models to evaluate credit risk under asymmetric loss and real data-collection cost. A parsimonious 2-variable model matched full-ensemble performance, cutting the pipeline's operational cost.</p>
+                <ul class="project-highlights">
+                  <li>Built XGBoost and LightGBM models under a 5:1 false-negative penalty.</li>
+                  <li>Reduced multicollinearity with VIF analysis to show a parsimonious 2-variable model with comparable performance.</li>
+                </ul>
+                <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
+                <p class="project-meta mb-3"><strong>Frameworks:</strong> XGBoost, LightGBM, scikit-learn</p>
+                <a href="https://github.com/Sgipn/Feature_Cost_vs_Signal_in_Credit_Risk_Prediction" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-detail-panel" data-project="polar-cloud">
+            <button class="project-detail-back" type="button"><i class="fa-solid fa-arrow-left me-2" aria-hidden="true"></i>All Projects</button>
+            <div class="project-row d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
+              <div class="project-row-media">
+                <img src="images/polar_clour.png" alt="Polar satellite cloud-detection output" class="project-image">
+              </div>
+              <div class="project-row-content">
+                <span class="project-label">Geospatial Analysis</span>
+                <h3 class="project-title">Polar Cloud Detection using Geospatial Satellite Imagery <span class="project-title-year">(2024)</span></h3>
+                <p>Cloud cover commonly distorts satellite-based climate measurements, which makes cloud detection in polar regions especially difficult since snow and ice visually mimic clouds. Moreover, expert labels are scarce: only 3 of the 164 MISR images used here are labeled, further adding to the difficulty of analysis common amongst remote sensing ML applications. This project tackles the problem of detecting cloud cover in polar regions given the lack of labeled data and the risk of spatial autocorrelation inflating validation performance.</p>
+                <ul class="project-highlights">
+                  <li>Pre-trained multi-layer neural network autoencoders on unlabeled multi-angle MISR imagery (source: NASA) via transfer learning, extracting 40-dimensional latent embeddings across spatial 3x3 to 9x9 neighbor windows.</li>
+                  <li>Classified cloud cover and terrain by training LightGBM, Random Forest, and k-NN models on the resulting multi-angular spatial features, reaching <strong>98.74% classification accuracy</strong> on unstructured imagery.</li>
+                  <li>Ran quadrant-based spatial cross-validation and perturbation/noise-injection stress testing to evaluate model stability and out-of-distribution generalization.</li>
+                </ul>
+                <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
+                <p class="project-meta mb-3"><strong>Frameworks:</strong> TensorFlow / Keras, scikit-learn, LightGBM</p>
+                <a href="https://github.com/Sgipn/Polar_Cloud_Detection" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-detail-panel" data-project="hackdavis">
+            <button class="project-detail-back" type="button"><i class="fa-solid fa-arrow-left me-2" aria-hidden="true"></i>All Projects</button>
+            <div class="project-row d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
+              <div class="project-row-media">
+                <img src="images/heart_disease.jpg" alt="Heart Disease Risk Predictor project" class="project-image">
+              </div>
+              <div class="project-row-content">
+                <span class="project-label">Hackathon · HackDavis 2022</span>
+                <h3 class="project-title">Heart Disease Risk Predictor <span class="project-title-year">(2022)</span></h3>
+                <p>A 24-hour hackathon isn't much time to take a model from notebook to something a real user can interact with. Built with a hackathon team, this tool trains a risk model on 2022 CDC Behavioral Risk Factor Surveillance System (BRFSS) survey data and serves predictions through a Flask backend with an HTML/CSS frontend.</p>
+                <ul class="project-highlights">
+                  <li>Trained a heart disease risk model on 2022 CDC Behavioral Risk Factor Surveillance System (BRFSS) survey data.</li>
+                  <li>Built a Flask web application that takes user health inputs and returns a real-time risk prediction.</li>
+                  <li>Shipped a working end-to-end product (model, backend, and frontend) within a 24-hour hackathon window.</li>
+                </ul>
+                <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
+                <p class="project-meta mb-3"><strong>Frameworks:</strong> Flask, scikit-learn, HTML/CSS</p>
+                <a href="https://github.com/wworkman475/Hackdavis-2022-project" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-detail-panel" data-project="tiktokify">
+            <button class="project-detail-back" type="button"><i class="fa-solid fa-arrow-left me-2" aria-hidden="true"></i>All Projects</button>
+            <div class="project-row d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
+              <div class="project-row-media">
+                <img src="images/spotify_logo.jpg" alt="TikTokify project" class="project-image">
+              </div>
+              <div class="project-row-content">
+                <span class="project-label">Data Analysis · Music</span>
+                <h3 class="project-title">TikTokify: What Makes TikTok Songs Popular? <span class="project-title-year">(2021)</span></h3>
+                <p>Short-form video platforms reward different qualities in a song than radio or streaming charts do, but it's not obvious which audio characteristics actually drive that difference. Pulled track-level audio features via the Spotify API for TikTok-popular songs versus mainstream U.S. hits, then compared them to surface which musical attributes actually distinguish TikTok-favored tracks.</p>
+                <ul class="project-highlights">
+                  <li>Extracted audio-feature data via the Spotify Web API (spotipy) for both TikTok-popular and U.S.-popular song sets.</li>
+                  <li>Built a comparative analysis pipeline in pandas and NumPy across four song datasets to isolate distinguishing audio attributes.</li>
+                  <li>Documented findings through Jupyter notebooks, visualizations, and a presentation summarizing the comparison.</li>
+                </ul>
+                <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
+                <p class="project-meta mb-3"><strong>Frameworks:</strong> Spotify API (spotipy), pandas, NumPy</p>
+                <a href="https://github.com/Sgipn/TikTokify" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-detail-panel" data-project="airbnb">
+            <button class="project-detail-back" type="button"><i class="fa-solid fa-arrow-left me-2" aria-hidden="true"></i>All Projects</button>
+            <div class="project-row d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
+              <div class="project-row-media">
+                <img src="images/airbnb.jpg" alt="Airbnb Price Prediction project" class="project-image">
+              </div>
+              <div class="project-row-content">
+                <span class="project-label">Regression · Real Estate</span>
+                <h3 class="project-title">Airbnb Price Prediction <span class="project-title-year">(2021)</span></h3>
+                <p>Airbnb hosts and analysts need to know which listing attributes actually move price, not just a black-box number. Collaborated with a team of three to model NYC Airbnb rental prices across ~38,800 listings and 232 features using OLS, Ridge, Lasso, and Elastic Net regression, with the tuned Lasso model isolating room type and Manhattan location as the strongest price drivers.</p>
+                <ul class="project-highlights">
+                  <li>Cleaned and standardized a dataset of 38,837 listings and 232 features, removing invalid identifiers and NaN review dates.</li>
+                  <li>Compared OLS, Ridge, Lasso, and Elastic Net regression, tuning Lasso via 10-fold cross-validation (λ ≈ 4).</li>
+                  <li>Identified room type and Manhattan location as the strongest price predictors, reaching an MAE of ~$1,934.</li>
+                </ul>
+                <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
+                <p class="project-meta mb-3"><strong>Frameworks:</strong> scikit-learn, pandas, NumPy</p>
+                <a href="https://github.com/Sgipn/Airbnb_PricePred" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-detail-panel" data-project="vehicle-classification">
+            <button class="project-detail-back" type="button"><i class="fa-solid fa-arrow-left me-2" aria-hidden="true"></i>All Projects</button>
+            <div class="project-row d-flex flex-column flex-lg-row align-items-center gap-4 gap-lg-5">
+              <div class="project-row-media">
+                <img src="images/car_detection.jpg" alt="Vehicle Classification project" class="project-image">
+              </div>
+              <div class="project-row-content">
+                <span class="project-label">Computer Vision · Classification</span>
+                <h3 class="project-title">Vehicle Classification <span class="project-title-year">(2020)</span></h3>
+                <p>Manually sorting vehicle images at scale doesn't hold up, since automated classification needs to generalize across huge visual variation within a single object category. Built a supervised image-classification pipeline that reduces a 7,500-dimensional pixel feature space to under 500 principal components while retaining over 80% of the variance, then compares Logistic Regression, QDA, and k-Nearest Neighbors to classify vehicle type from images.</p>
+                <ul class="project-highlights">
+                  <li>Standardized raw image vectors by feature-wise mean and standard deviation before dimensionality reduction.</li>
+                  <li>Applied PCA to compress the 7,500-dimensional feature space to under 500 components while retaining more than 80% of the variance.</li>
+                  <li>Compared Logistic Regression, Quadratic Discriminant Analysis (QDA), and k-Nearest Neighbors to evaluate classification performance.</li>
+                </ul>
+                <p class="project-meta mb-1"><strong>Languages:</strong> Python</p>
+                <p class="project-meta mb-3"><strong>Frameworks:</strong> scikit-learn, PCA, Jupyter</p>
+                <a href="https://github.com/Sgipn/Vehicle_Classification" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-
     </div>
   </section>
 
@@ -473,12 +686,150 @@
   document.querySelectorAll('.project-toggle').forEach(btn => {
     btn.addEventListener('click', () => {
       const list = btn.nextElementSibling;
-      const expanded = list.hidden;
-      list.hidden = !expanded;
-      btn.textContent = expanded ? 'Read less' : 'Read more';
-      btn.setAttribute('aria-expanded', String(expanded));
+      const isOpen = list.classList.contains('is-open');
+      if (isOpen) {
+        list.style.maxHeight = '0px';
+        list.classList.remove('is-open');
+      } else {
+        list.classList.add('is-open');
+        list.style.maxHeight = `${list.scrollHeight}px`;
+      }
+      btn.textContent = isOpen ? 'Read more' : 'Read less';
+      btn.setAttribute('aria-expanded', String(!isOpen));
     });
   });
+
+  const orbitWrap = document.getElementById('projectOrbitWrap');
+  if (orbitWrap) {
+    const orbitStage = document.getElementById('projectOrbitStage');
+    const orbitTimeline = document.getElementById('projectOrbitTimeline');
+    const scroller = document.getElementById('projectOrbitScroller');
+    const detailView = document.getElementById('projectDetailView');
+    const nodes = orbitWrap.querySelectorAll('.project-node');
+    const panels = orbitWrap.querySelectorAll('.project-detail-panel');
+    const backButtons = orbitWrap.querySelectorAll('.project-detail-back');
+    const scrollZoneLeft = document.getElementById('scrollZoneLeft');
+    const scrollZoneRight = document.getElementById('scrollZoneRight');
+    const sun = document.getElementById('projectSun');
+    const skyNight = document.getElementById('projectSkyNight');
+    let lastFocusedNode = null;
+
+    function setStageHeight(el) {
+      orbitStage.style.height = `${el.scrollHeight}px`;
+    }
+
+    function openProject(key, originEl) {
+      lastFocusedNode = originEl || null;
+
+      if (originEl) {
+        const stageRect = orbitStage.getBoundingClientRect();
+        const originRect = originEl.getBoundingClientRect();
+        const originX = ((originRect.left + originRect.width / 2 - stageRect.left) / stageRect.width) * 100;
+        const originY = ((originRect.top + originRect.height / 2 - stageRect.top) / stageRect.height) * 100;
+        orbitStage.style.setProperty('--zoom-x', `${originX}%`);
+        orbitStage.style.setProperty('--zoom-y', `${originY}%`);
+      }
+
+      panels.forEach(panel => panel.classList.toggle('is-active', panel.dataset.project === key));
+      const activePanel = orbitWrap.querySelector('.project-detail-panel.is-active');
+      if (!activePanel) return;
+
+      orbitWrap.classList.add('detail-open');
+      setStageHeight(activePanel);
+      orbitTimeline.inert = true;
+      detailView.inert = false;
+
+      const backBtn = activePanel.querySelector('.project-detail-back');
+      if (backBtn) backBtn.focus({ preventScroll: true });
+    }
+
+    function closeProject() {
+      orbitWrap.classList.remove('detail-open');
+      setStageHeight(orbitTimeline);
+      orbitTimeline.inert = false;
+      detailView.inert = true;
+      if (lastFocusedNode) lastFocusedNode.focus({ preventScroll: true });
+    }
+
+    let defaultSunLeft = '0%';
+    let defaultSunTop = '90%';
+    let defaultSkyNight = 0;
+
+    nodes.forEach((node, index) => {
+      node.addEventListener('click', () => openProject(node.dataset.project, node));
+
+      const fraction = nodes.length > 1 ? index / (nodes.length - 1) : 0.5;
+      const arcHeight = 1 - Math.sin(Math.PI * fraction);
+      const sunLeft = `${fraction * 100}%`;
+      const sunTop = `${10 + arcHeight * 80}%`;
+
+      if (index === 0) {
+        defaultSunLeft = sunLeft;
+        defaultSunTop = sunTop;
+        defaultSkyNight = fraction;
+      }
+
+      function moveSun() {
+        sun.style.left = sunLeft;
+        sun.style.top = sunTop;
+        skyNight.style.opacity = fraction;
+      }
+
+      node.addEventListener('mouseenter', moveSun);
+      node.addEventListener('focus', moveSun);
+    });
+
+    sun.style.left = defaultSunLeft;
+    sun.style.top = defaultSunTop;
+    skyNight.style.opacity = defaultSkyNight;
+
+    orbitTimeline.addEventListener('mouseleave', () => {
+      sun.style.left = defaultSunLeft;
+      sun.style.top = defaultSunTop;
+      skyNight.style.opacity = defaultSkyNight;
+    });
+
+    backButtons.forEach(btn => {
+      btn.addEventListener('click', closeProject);
+    });
+
+    detailView.inert = true;
+    setStageHeight(orbitTimeline);
+
+    window.addEventListener('resize', () => {
+      const activePanel = orbitWrap.querySelector('.project-detail-panel.is-active');
+      setStageHeight(orbitWrap.classList.contains('detail-open') && activePanel ? activePanel : orbitTimeline);
+    });
+
+    function updateScrollZones() {
+      const atStart = scroller.scrollLeft <= 2;
+      const atEnd = scroller.scrollLeft >= scroller.scrollWidth - scroller.clientWidth - 2;
+      scrollZoneLeft.classList.toggle('is-active', !atStart);
+      scrollZoneRight.classList.toggle('is-active', !atEnd);
+    }
+
+    function makeAutoScroll(zoneEl, direction) {
+      let raf = null;
+      function step() {
+        scroller.scrollLeft += direction * 14;
+        raf = requestAnimationFrame(step);
+      }
+      zoneEl.addEventListener('mouseenter', () => {
+        if (raf || !zoneEl.classList.contains('is-active')) return;
+        raf = requestAnimationFrame(step);
+      });
+      zoneEl.addEventListener('mouseleave', () => {
+        if (raf) cancelAnimationFrame(raf);
+        raf = null;
+      });
+    }
+
+    makeAutoScroll(scrollZoneLeft, -1);
+    makeAutoScroll(scrollZoneRight, 1);
+    scroller.addEventListener('scroll', updateScrollZones);
+    window.addEventListener('resize', updateScrollZones);
+    updateScrollZones();
+  }
 
   const travelViewport = document.querySelector('.travel-slide-viewport');
   if (travelViewport) {
