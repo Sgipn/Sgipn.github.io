@@ -833,6 +833,7 @@ main {
   .project-node-wrap {
     position: static;
     width: 100%;
+    transform: none;
   }
 
   .project-node {
