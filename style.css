@@ -1156,6 +1156,18 @@ main {
   color: #ffffff;
 }
 
+.btn-report {
+  background-color: transparent;
+  border-color: rgba(251, 191, 36, 0.55);
+  color: #fbbf24;
+}
+
+.btn-report:hover {
+  background-color: rgba(251, 191, 36, 0.14);
+  border-color: rgba(251, 191, 36, 0.85);
+  color: #fbbf24;
+}
+
 footer {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   margin-top: 3rem;
