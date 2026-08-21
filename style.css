@@ -823,6 +823,11 @@ main {
     height: auto;
   }
 
+  .project-sun-sky,
+  .project-sky-tone {
+    display: none;
+  }
+
   .project-orbit {
     width: 100%;
     height: auto;
