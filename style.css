@@ -1157,15 +1157,14 @@ main {
 }
 
 .btn-report {
-  background-color: transparent;
-  border-color: rgba(251, 191, 36, 0.55);
-  color: #fbbf24;
+  background-color: #198754;
+  border-color: transparent;
+  color: #ffffff;
 }
 
 .btn-report:hover {
-  background-color: rgba(251, 191, 36, 0.14);
-  border-color: rgba(251, 191, 36, 0.85);
-  color: #fbbf24;
+  background-color: #157347;
+  color: #ffffff;
 }
 
 footer {
