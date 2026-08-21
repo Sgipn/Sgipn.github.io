@@ -324,13 +324,18 @@ main {
   min-width: 160px;
 }
 
-.hero-actions .btn-primary {
-  background-color: rgba(59, 130, 246, 0.95);
+.btn-hero {
+  background-color: rgba(59, 130, 246, 0.85);
   border-color: transparent;
+  color: #ffffff;
+  transition: background-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
 }
 
-.hero-actions .btn-primary:hover {
+.btn-hero:hover {
   background-color: rgba(59, 130, 246, 1);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(59, 130, 246, 0.35);
 }
 
 .experience-card,
