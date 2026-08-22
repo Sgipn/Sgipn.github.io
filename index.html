@@ -90,6 +90,20 @@
           <p class="experience-subtitle mb-0"><em>Deloitte, San Francisco</em></p>
           <p class="experience-date mb-3">Aug 2022 – Apr 2025</p>
           <p class="experience-intro">After Ernst & Young (EY), the portfolio's external auditor, raised serious concerns through Notices of Findings and Recommendations (NFRs), Deloitte was brought in to design and execute the technological transformation of the Air Force's Military Equipment Valuation (MEV) enterprise. Owned anomaly detection, data lineage, and high-throughput reconciliation systems for this <strong>$12.2B Department of Defense financial portfolio</strong>, taking each system from MVP design to high-availability deployment under strict audit remediation timelines.</p>
+          <div class="stat-strip">
+            <div class="stat-chip">
+              <span class="stat-number" data-count="22" data-prefix="$" data-suffix="M">$22M</span>
+              <span class="stat-label">Recoverable Assets Surfaced</span>
+            </div>
+            <div class="stat-chip">
+              <span class="stat-number" data-count="80" data-prefix="~" data-suffix="%">~80%</span>
+              <span class="stat-label">Runtime Reduction</span>
+            </div>
+            <div class="stat-chip">
+              <span class="stat-number" data-count="4">4</span>
+              <span class="stat-label">Engineers Mentored</span>
+            </div>
+          </div>
           <button class="project-toggle btn btn-outline-light btn-sm mb-3" type="button" aria-expanded="false">Read more</button>
           <ul class="collapsible">
             <li>Designed a rule-based anomaly detection engine automating pattern recognition for valuation mismatches, duplicate records, and cross-system breaks; <strong>surfaced ~$22M in recoverable assets</strong>, iteratively feeding audit findings back into detection logic.</li>
@@ -110,6 +124,16 @@
           <h5>Statistics Researcher</h5>
           <p class="experience-subtitle mb-0"><em>UC Davis Computational Communications Lab, Davis, CA</em></p>
           <p class="experience-date mb-3">Aug 2021 – Nov 2021</p>
+          <div class="stat-strip">
+            <div class="stat-chip">
+              <span class="stat-number" data-count="31">31</span>
+              <span class="stat-label">Psychological Measures Modeled</span>
+            </div>
+            <div class="stat-chip">
+              <span class="stat-number" data-count="22">22</span>
+              <span class="stat-label">Randomized Experiments Analyzed</span>
+            </div>
+          </div>
           <ul>
             <li>Applied canonical correlation and factor analysis across 31 psychological measures and 25 outcomes from 22 randomized experiments to identify traits predicting resilience against algorithmic manipulation; contributed to peer-reviewed research under PI Martin Hilbert.</li>
           </ul>
@@ -681,11 +705,31 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function animateStatCount(el) {
+    const target = parseFloat(el.dataset.count);
+    if (Number.isNaN(target) || prefersReducedMotion) return;
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    const duration = 1300;
+    const start = performance.now();
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = `${prefix}${Math.round(target * eased)}${suffix}`;
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = `${prefix}${target}${suffix}`;
+    }
+    requestAnimationFrame(tick);
+  }
+
   const revealEls = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
+        entry.target.querySelectorAll('.stat-number').forEach(animateStatCount);
         revealObserver.unobserve(entry.target);
       }
     });

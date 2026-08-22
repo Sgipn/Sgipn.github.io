@@ -348,15 +348,55 @@ main {
 .experience-card,
 .skill-card,
 .education-card {
-  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1), border-color 320ms ease;
 }
 
 .experience-card:hover,
 .skill-card:hover,
 .education-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.28);
   border-color: rgba(125, 211, 252, 0.32);
+}
+
+.stat-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 0.9rem 0 1.1rem;
+}
+
+.stat-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: 14px;
+  background: rgba(165, 180, 252, 0.08);
+  border: 1px solid rgba(165, 180, 252, 0.22);
+  min-width: 132px;
+  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), background-color 260ms ease, border-color 260ms ease;
+}
+
+.stat-chip:hover {
+  transform: translateY(-3px);
+  background: rgba(165, 180, 252, 0.14);
+  border-color: rgba(165, 180, 252, 0.4);
+}
+
+.stat-number {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #a5b4fc;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #94a3b8;
 }
 
 .experience-card ul,
