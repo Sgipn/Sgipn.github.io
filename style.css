@@ -324,6 +324,100 @@ main {
   min-width: 160px;
 }
 
+.tech-marquee {
+  position: relative;
+  overflow: hidden;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.tech-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+  transition: opacity 220ms ease, filter 220ms ease;
+}
+
+.tech-marquee:hover .tech-marquee-track {
+  animation-play-state: paused;
+  opacity: 0.32;
+  filter: blur(1px);
+}
+
+.tech-marquee-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  padding: 0.65rem 1.5rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #e2e8f0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
+.tech-marquee:hover .tech-marquee-label {
+  opacity: 1;
+}
+
+.tech-logo,
+.tech-logo-icon {
+  flex-shrink: 0;
+  transition: background-color 220ms ease, color 220ms ease, transform 220ms ease;
+}
+
+.tech-logo {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  background-color: rgba(255, 255, 255, 0.85);
+  -webkit-mask-image: var(--logo-url);
+  mask-image: var(--logo-url);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.tech-logo-icon {
+  font-size: 1.9rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.tech-logo:hover,
+.tech-logo-icon:hover {
+  background-color: rgba(125, 211, 252, 0.9);
+  color: rgba(125, 211, 252, 0.9);
+  transform: translateY(-3px) scale(1.08);
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-marquee-track {
+    animation: none;
+  }
+}
+
 .btn-hero {
   background-color: rgba(59, 130, 246, 0.85);
   border-color: transparent;
